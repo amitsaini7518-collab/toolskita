@@ -6,6 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Static Pages
+import About from "./pages/About";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
+import AllTools from "./pages/AllTools";
+
 // Tool Pages
 import ImageCropper from "./pages/tools/ImageCropper";
 import ImageCompressor from "./pages/tools/ImageCompressor";
@@ -30,6 +37,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          
+          {/* Static Pages */}
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/tools" element={<AllTools />} />
           
           {/* Tool Routes */}
           <Route path="/tools/image-cropper" element={<ImageCropper />} />
