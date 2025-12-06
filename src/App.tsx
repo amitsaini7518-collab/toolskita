@@ -26,6 +26,7 @@ import NumberConverter from "./pages/tools/NumberConverter";
 import ImageToPDF from "./pages/tools/ImageToPDF";
 import PDFToImage from "./pages/tools/PDFToImage";
 import RemoveBackground from "./pages/tools/RemoveBackground";
+import KBConverter from "./pages/tools/KBConverter";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           {/* Tool Routes */}
           <Route path="/tools/image-cropper" element={<ImageCropper />} />
           <Route path="/tools/image-compressor" element={<ImageCompressor />} />
+          <Route path="/tools/kb-converter" element={<KBConverter />} />
           <Route path="/tools/age-calculator" element={<AgeCalculator />} />
           <Route path="/tools/qr-generator" element={<QRGenerator />} />
           <Route path="/tools/color-picker" element={<ColorPicker />} />
