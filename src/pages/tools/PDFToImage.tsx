@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FileText, Upload, Download, X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
 import * as pdfjsLib from "pdfjs-dist";
@@ -12,6 +14,7 @@ const PDFToImage = () => {
   const [images, setImages] = useState<string[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [pdfName, setPdfName] = useState<string>("");
+  const [baseFileName, setBaseFileName] = useState("page");
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -22,6 +25,8 @@ const PDFToImage = () => {
 
     setIsProcessing(true);
     setPdfName(file.name);
+    const nameWithoutExt = file.name.replace(/\.[^/.]+$/, "");
+    setBaseFileName(nameWithoutExt + "-page");
     setImages([]);
 
     try {
@@ -62,7 +67,8 @@ const PDFToImage = () => {
 
   const downloadImage = (imageUrl: string, index: number) => {
     const link = document.createElement("a");
-    link.download = `page-${index + 1}.png`;
+    const finalName = baseFileName.trim() || "page";
+    link.download = `${finalName}-${index + 1}.png`;
     link.href = imageUrl;
     link.click();
     toast.success(`Page ${index + 1} downloaded!`);
@@ -79,6 +85,7 @@ const PDFToImage = () => {
   const handleReset = () => {
     setImages([]);
     setPdfName("");
+    setBaseFileName("page");
   };
 
   return (
@@ -126,6 +133,22 @@ const PDFToImage = () => {
                   <X className="w-4 h-4 mr-2" />
                   Clear
                 </Button>
+              </div>
+            </div>
+
+            {/* Filename Input */}
+            <div className="space-y-2">
+              <Label htmlFor="pdf-image-filename">Base File Name</Label>
+              <div className="flex gap-2 items-center">
+                <Input
+                  id="pdf-image-filename"
+                  type="text"
+                  value={baseFileName}
+                  onChange={(e) => setBaseFileName(e.target.value)}
+                  placeholder="Enter base file name"
+                  className="flex-1"
+                />
+                <span className="text-muted-foreground">-1.png, -2.png...</span>
               </div>
             </div>
 

@@ -14,12 +14,15 @@ const TextOnPhoto = () => {
   const [textColor, setTextColor] = useState("#ffffff");
   const [textX, setTextX] = useState([50]);
   const [textY, setTextY] = useState([50]);
+  const [fileName, setFileName] = useState("text-on-photo");
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, "");
+      setFileName(nameWithoutExt + "-text");
       const reader = new FileReader();
       reader.onload = (e) => {
         const img = new Image();
@@ -76,7 +79,8 @@ const TextOnPhoto = () => {
     drawCanvas();
     
     const link = document.createElement("a");
-    link.download = "text-on-photo.png";
+    const finalName = fileName.trim() || "text-on-photo";
+    link.download = `${finalName}.png`;
     link.href = canvasRef.current.toDataURL("image/png");
     link.click();
     toast.success("Image downloaded!");
@@ -89,6 +93,7 @@ const TextOnPhoto = () => {
     setTextColor("#ffffff");
     setTextX([50]);
     setTextY([50]);
+    setFileName("text-on-photo");
   };
 
   // Update canvas whenever settings change
@@ -179,6 +184,22 @@ const TextOnPhoto = () => {
                   max={100}
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Filename Input */}
+          <div className="space-y-2">
+            <Label htmlFor="text-filename">File Name</Label>
+            <div className="flex gap-2 items-center">
+              <Input
+                id="text-filename"
+                type="text"
+                value={fileName}
+                onChange={(e) => setFileName(e.target.value)}
+                placeholder="Enter file name"
+                className="flex-1"
+              />
+              <span className="text-muted-foreground">.png</span>
             </div>
           </div>
 

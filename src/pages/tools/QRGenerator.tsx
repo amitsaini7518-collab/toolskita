@@ -10,6 +10,7 @@ import QRCode from "qrcode";
 const QRGenerator = () => {
   const [text, setText] = useState("");
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
+  const [fileName, setFileName] = useState("qrcode");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const generateQR = async (inputText: string) => {
@@ -41,7 +42,8 @@ const QRGenerator = () => {
   const handleDownload = () => {
     if (!qrDataUrl) return;
     const link = document.createElement("a");
-    link.download = "qrcode.png";
+    const finalName = fileName.trim() || "qrcode";
+    link.download = `${finalName}.png`;
     link.href = qrDataUrl;
     link.click();
     toast.success("QR Code downloaded!");
@@ -89,15 +91,32 @@ const QRGenerator = () => {
           </div>
 
           {text && (
-            <div className="flex flex-wrap gap-4">
-              <Button variant="gradient" onClick={handleDownload}>
-                <Download className="w-4 h-4 mr-2" />
-                Download PNG
-              </Button>
-              <Button variant="outline" onClick={handleCopy}>
-                <Copy className="w-4 h-4 mr-2" />
-                Copy to Clipboard
-              </Button>
+            <div className="space-y-4 w-full max-w-xs">
+              <div className="space-y-2">
+                <Label htmlFor="qr-filename">File Name</Label>
+                <div className="flex gap-2 items-center">
+                  <Input
+                    id="qr-filename"
+                    type="text"
+                    value={fileName}
+                    onChange={(e) => setFileName(e.target.value)}
+                    placeholder="Enter file name"
+                    className="flex-1"
+                  />
+                  <span className="text-muted-foreground">.png</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Button variant="gradient" onClick={handleDownload}>
+                  <Download className="w-4 h-4 mr-2" />
+                  Download PNG
+                </Button>
+                <Button variant="outline" onClick={handleCopy}>
+                  <Copy className="w-4 h-4 mr-2" />
+                  Copy to Clipboard
+                </Button>
+              </div>
             </div>
           )}
         </div>
