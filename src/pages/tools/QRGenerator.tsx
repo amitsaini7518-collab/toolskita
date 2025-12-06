@@ -5,78 +5,37 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
+import QRCode from "qrcode";
 
 const QRGenerator = () => {
   const [text, setText] = useState("");
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const generateQR = (inputText: string) => {
-    if (!inputText.trim() || !canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    // Simple QR code generation using a basic algorithm
-    // For production, you'd use a library like qrcode.js
-    const size = 256;
-    canvas.width = size;
-    canvas.height = size;
-
-    // Create QR code pattern (simplified representation)
-    const moduleSize = 8;
-    const modules = Math.floor(size / moduleSize);
-    
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, size, size);
-
-    ctx.fillStyle = "#000000";
-
-    // Generate pseudo-random pattern based on text
-    const hash = inputText.split("").reduce((acc, char) => {
-      return ((acc << 5) - acc) + char.charCodeAt(0);
-    }, 0);
-
-    // Draw finder patterns (corner squares)
-    const drawFinder = (x: number, y: number) => {
-      const s = moduleSize;
-      ctx.fillRect(x, y, 7 * s, s);
-      ctx.fillRect(x, y + 6 * s, 7 * s, s);
-      ctx.fillRect(x, y, s, 7 * s);
-      ctx.fillRect(x + 6 * s, y, s, 7 * s);
-      ctx.fillRect(x + 2 * s, y + 2 * s, 3 * s, 3 * s);
-    };
-
-    drawFinder(moduleSize, moduleSize);
-    drawFinder(size - 8 * moduleSize, moduleSize);
-    drawFinder(moduleSize, size - 8 * moduleSize);
-
-    // Draw data pattern
-    for (let i = 9; i < modules - 1; i++) {
-      for (let j = 9; j < modules - 1; j++) {
-        const seed = (hash + i * modules + j) % 100;
-        if (seed < 40) {
-          ctx.fillRect(i * moduleSize, j * moduleSize, moduleSize, moduleSize);
-        }
-      }
+  const generateQR = async (inputText: string) => {
+    if (!inputText.trim() || !canvasRef.current) {
+      setQrDataUrl("");
+      return;
     }
 
-    // Timing patterns
-    for (let i = 8; i < modules - 8; i++) {
-      if (i % 2 === 0) {
-        ctx.fillRect(6 * moduleSize, i * moduleSize, moduleSize, moduleSize);
-        ctx.fillRect(i * moduleSize, 6 * moduleSize, moduleSize, moduleSize);
-      }
+    try {
+      await QRCode.toCanvas(canvasRef.current, inputText, {
+        width: 256,
+        margin: 2,
+        color: {
+          dark: "#000000",
+          light: "#ffffff",
+        },
+      });
+      setQrDataUrl(canvasRef.current.toDataURL("image/png"));
+    } catch (error) {
+      console.error("QR Code generation failed:", error);
+      toast.error("Failed to generate QR Code");
     }
-
-    setQrDataUrl(canvas.toDataURL("image/png"));
   };
 
   useEffect(() => {
-    if (text) {
-      generateQR(text);
-    }
+    generateQR(text);
   }, [text]);
 
   const handleDownload = () => {
@@ -91,8 +50,11 @@ const QRGenerator = () => {
   const handleCopy = async () => {
     if (!canvasRef.current) return;
     try {
-      const blob = await new Promise<Blob>((resolve) => {
-        canvasRef.current!.toBlob((blob) => resolve(blob!), "image/png");
+      const blob = await new Promise<Blob>((resolve, reject) => {
+        canvasRef.current!.toBlob((blob) => {
+          if (blob) resolve(blob);
+          else reject(new Error("Failed to create blob"));
+        }, "image/png");
       });
       await navigator.clipboard.write([
         new ClipboardItem({ "image/png": blob }),
@@ -123,7 +85,7 @@ const QRGenerator = () => {
 
         <div className="flex flex-col items-center space-y-6">
           <div className="bg-card p-6 rounded-2xl border border-border">
-            <canvas ref={canvasRef} className="w-64 h-64" />
+            <canvas ref={canvasRef} width={256} height={256} className="w-64 h-64" />
           </div>
 
           {text && (
