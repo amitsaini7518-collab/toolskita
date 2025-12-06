@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FileDown, Upload, Download, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
@@ -11,6 +13,7 @@ const ImageCompressor = () => {
   const [quality, setQuality] = useState([80]);
   const [compressedSize, setCompressedSize] = useState<number>(0);
   const [compressedImage, setCompressedImage] = useState<string | null>(null);
+  const [fileName, setFileName] = useState("compressed-image");
 
   const formatSize = (bytes: number) => {
     if (bytes < 1024) return `${bytes} B`;
@@ -22,6 +25,8 @@ const ImageCompressor = () => {
     const file = e.target.files?.[0];
     if (file) {
       setOriginalSize(file.size);
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, "");
+      setFileName(nameWithoutExt + "-compressed");
       const reader = new FileReader();
       reader.onload = (e) => {
         const result = e.target?.result as string;
@@ -65,7 +70,8 @@ const ImageCompressor = () => {
   const handleDownload = () => {
     if (!compressedImage) return;
     const link = document.createElement("a");
-    link.download = "compressed-image.jpg";
+    const finalName = fileName.trim() || "compressed-image";
+    link.download = `${finalName}.jpg`;
     link.href = compressedImage;
     link.click();
     toast.success("Compressed image downloaded!");
@@ -77,6 +83,7 @@ const ImageCompressor = () => {
     setOriginalSize(0);
     setCompressedSize(0);
     setQuality([80]);
+    setFileName("compressed-image");
   };
 
   const savingsPercent = originalSize > 0 
@@ -136,6 +143,22 @@ const ImageCompressor = () => {
               step={5}
               className="w-full"
             />
+          </div>
+
+          {/* Filename Input */}
+          <div className="space-y-2">
+            <Label htmlFor="compress-filename">File Name</Label>
+            <div className="flex gap-2 items-center">
+              <Input
+                id="compress-filename"
+                type="text"
+                value={fileName}
+                onChange={(e) => setFileName(e.target.value)}
+                placeholder="Enter file name"
+                className="flex-1"
+              />
+              <span className="text-muted-foreground">.jpg</span>
+            </div>
           </div>
 
           {/* Actions */}

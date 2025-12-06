@@ -5,8 +5,12 @@ import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
 import { jsPDF } from "jspdf";
 
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
 const ImageToPDF = () => {
   const [images, setImages] = useState<{ id: string; src: string; name: string }[]>([]);
+  const [fileName, setFileName] = useState("converted");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -63,7 +67,8 @@ const ImageToPDF = () => {
         });
       }
       
-      pdf.save("converted.pdf");
+      const finalName = fileName.trim() || "converted";
+      pdf.save(`${finalName}.pdf`);
       toast.success("PDF created successfully!");
     } catch (error) {
       console.error("PDF generation error:", error);
@@ -131,6 +136,22 @@ const ImageToPDF = () => {
                   <p className="text-xs text-muted-foreground mt-1 truncate">{image.name}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Filename Input */}
+            <div className="space-y-2">
+              <Label htmlFor="pdf-filename">File Name</Label>
+              <div className="flex gap-2 items-center">
+                <Input
+                  id="pdf-filename"
+                  type="text"
+                  value={fileName}
+                  onChange={(e) => setFileName(e.target.value)}
+                  placeholder="Enter file name"
+                  className="flex-1"
+                />
+                <span className="text-muted-foreground">.pdf</span>
+              </div>
             </div>
 
             <Button variant="gradient" onClick={generatePDF} className="w-full">

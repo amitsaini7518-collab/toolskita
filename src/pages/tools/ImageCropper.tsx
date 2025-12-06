@@ -1,6 +1,8 @@
 import { useState, useRef, useCallback } from "react";
 import { Crop, Upload, Download, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
 
@@ -10,12 +12,15 @@ const ImageCropper = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [fileName, setFileName] = useState("cropped-image");
   const imageRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, "");
+      setFileName(nameWithoutExt + "-cropped");
       const reader = new FileReader();
       reader.onload = (e) => {
         setImage(e.target?.result as string);
@@ -89,7 +94,8 @@ const ImageCropper = () => {
     );
 
     const link = document.createElement("a");
-    link.download = "cropped-image.png";
+    const finalName = fileName.trim() || "cropped-image";
+    link.download = `${finalName}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
     toast.success("Image cropped and downloaded!");
@@ -98,6 +104,7 @@ const ImageCropper = () => {
   const handleReset = () => {
     setImage(null);
     setCropArea({ x: 0, y: 0, width: 200, height: 200 });
+    setFileName("cropped-image");
   };
 
   return (
@@ -147,6 +154,22 @@ const ImageCropper = () => {
                   handleMouseDown(e, "resize");
                 }}
               />
+            </div>
+          </div>
+
+          {/* Filename Input */}
+          <div className="space-y-2">
+            <Label htmlFor="crop-filename">File Name</Label>
+            <div className="flex gap-2 items-center">
+              <Input
+                id="crop-filename"
+                type="text"
+                value={fileName}
+                onChange={(e) => setFileName(e.target.value)}
+                placeholder="Enter file name"
+                className="flex-1"
+              />
+              <span className="text-muted-foreground">.png</span>
             </div>
           </div>
 
