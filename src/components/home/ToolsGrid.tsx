@@ -13,7 +13,6 @@ import {
   Hash
 } from "lucide-react";
 import ToolCard from "./ToolCard";
-import AdBanner from "../layout/AdBanner";
 
 const tools = [
   {
@@ -115,29 +114,8 @@ const ToolsGrid = () => {
           </p>
         </div>
 
-        {/* Top Ad Banner */}
-        <AdBanner size="leaderboard" className="mb-8" />
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {tools.slice(0, 4).map((tool) => (
-            <ToolCard key={tool.path} {...tool} />
-          ))}
-        </div>
-
-        {/* Mid Ad Banner */}
-        <AdBanner size="medium" className="my-8" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {tools.slice(4, 8).map((tool) => (
-            <ToolCard key={tool.path} {...tool} />
-          ))}
-        </div>
-
-        {/* Bottom Ad Banner */}
-        <AdBanner size="medium" className="my-8" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {tools.slice(8).map((tool) => (
+          {tools.map((tool) => (
             <ToolCard key={tool.path} {...tool} />
           ))}
         </div>
