@@ -3,6 +3,7 @@ import { FileImage, Upload, Download, X, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
+import { jsPDF } from "jspdf";
 
 const ImageToPDF = () => {
   const [images, setImages] = useState<{ id: string; src: string; name: string }[]>([]);
@@ -37,26 +38,37 @@ const ImageToPDF = () => {
       return;
     }
 
-    // Create a simple PDF using canvas
-    const pdf = document.createElement("canvas");
-    const ctx = pdf.getContext("2d");
-    if (!ctx) return;
-
-    // For a proper PDF, you'd use a library like jsPDF
-    // This is a simplified version that creates an image
-    const firstImg = new Image();
-    firstImg.onload = () => {
-      pdf.width = firstImg.width;
-      pdf.height = firstImg.height;
-      ctx.drawImage(firstImg, 0, 0);
-
-      const link = document.createElement("a");
-      link.download = "converted.png";
-      link.href = pdf.toDataURL("image/png");
-      link.click();
-      toast.success("Image converted! For full PDF support, use jsPDF library.");
-    };
-    firstImg.src = images[0].src;
+    try {
+      const pdf = new jsPDF();
+      
+      for (let i = 0; i < images.length; i++) {
+        const imgData = images[i].src;
+        
+        // Create image element to get dimensions
+        const img = new Image();
+        img.src = imgData;
+        
+        await new Promise<void>((resolve) => {
+          img.onload = () => {
+            const imgWidth = 190; // A4 width with margins
+            const imgHeight = (img.height * imgWidth) / img.width;
+            
+            if (i > 0) {
+              pdf.addPage();
+            }
+            
+            pdf.addImage(imgData, "JPEG", 10, 10, imgWidth, imgHeight);
+            resolve();
+          };
+        });
+      }
+      
+      pdf.save("converted.pdf");
+      toast.success("PDF created successfully!");
+    } catch (error) {
+      console.error("PDF generation error:", error);
+      toast.error("Failed to create PDF. Please try again.");
+    }
   };
 
   return (

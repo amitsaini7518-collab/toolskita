@@ -17,6 +17,7 @@ import BMICalculator from "./pages/tools/BMICalculator";
 import TextOnPhoto from "./pages/tools/TextOnPhoto";
 import NumberConverter from "./pages/tools/NumberConverter";
 import ImageToPDF from "./pages/tools/ImageToPDF";
+import PDFToImage from "./pages/tools/PDFToImage";
 import RemoveBackground from "./pages/tools/RemoveBackground";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/tools/text-on-photo" element={<TextOnPhoto />} />
           <Route path="/tools/number-converter" element={<NumberConverter />} />
           <Route path="/tools/image-to-pdf" element={<ImageToPDF />} />
+          <Route path="/tools/pdf-to-image" element={<PDFToImage />} />
           <Route path="/tools/remove-background" element={<RemoveBackground />} />
           
           {/* Catch-all */}
