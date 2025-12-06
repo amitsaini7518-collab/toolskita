@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, LucideIcon } from "lucide-react";
+import { ArrowLeft, LucideIcon, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import QRCode from "qrcode";
 
 interface ToolLayoutProps {
   title: string;
@@ -9,6 +10,38 @@ interface ToolLayoutProps {
   icon: LucideIcon;
   children: ReactNode;
 }
+
+const DonateBanner = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const upiLink = "upi://pay?pa=example@upi&pn=AllTool&am=&cu=INR";
+    if (canvasRef.current) {
+      QRCode.toCanvas(canvasRef.current, upiLink, {
+        width: 80,
+        margin: 1,
+        color: { dark: "#000000", light: "#ffffff" }
+      });
+    }
+  }, []);
+
+  return (
+    <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4">
+      <div className="bg-white rounded-lg p-1.5 shrink-0">
+        <canvas ref={canvasRef} className="rounded" />
+      </div>
+      <div className="text-center sm:text-left">
+        <h3 className="font-semibold flex items-center justify-center sm:justify-start gap-2 text-foreground">
+          <Heart className="w-4 h-4 text-destructive" />
+          Love this tool? Support us!
+        </h3>
+        <p className="text-sm text-muted-foreground mt-1">
+          Help us keep AllTool.tech free forever. Scan QR to donate via UPI.
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const ToolLayout = ({ title, description, icon: Icon, children }: ToolLayoutProps) => {
   return (
@@ -41,6 +74,9 @@ const ToolLayout = ({ title, description, icon: Icon, children }: ToolLayoutProp
           <div className="glass-card rounded-2xl p-6">
             {children}
           </div>
+
+          {/* Donate Banner */}
+          <DonateBanner />
         </div>
       </div>
     </div>
