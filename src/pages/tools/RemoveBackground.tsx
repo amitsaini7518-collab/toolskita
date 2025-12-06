@@ -31,6 +31,7 @@ const RemoveBackground = () => {
   const [selectedColor, setSelectedColor] = useState("transparent");
   const [customColor, setCustomColor] = useState("#FFFFFF");
   const [progress, setProgress] = useState("");
+  const [fileName, setFileName] = useState("removed-background");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +39,10 @@ const RemoveBackground = () => {
     if (!file) return;
 
     setOriginalFile(file);
+    // Set default filename from uploaded file (without extension)
+    const nameWithoutExt = file.name.replace(/\.[^/.]+$/, "");
+    setFileName(nameWithoutExt + "-no-bg");
+    
     const reader = new FileReader();
     reader.onload = (e) => {
       setOriginalImage(e.target?.result as string);
@@ -103,7 +108,8 @@ const RemoveBackground = () => {
     const response = await fetch(processedImage);
     const blob = await response.blob();
     const link = document.createElement("a");
-    link.download = "removed-background.png";
+    const finalName = fileName.trim() || "removed-background";
+    link.download = `${finalName}.png`;
     link.href = URL.createObjectURL(blob);
     link.click();
     toast.success("Image downloaded!");
@@ -116,6 +122,7 @@ const RemoveBackground = () => {
     setProcessedBlob(null);
     setSelectedColor("transparent");
     setProgress("");
+    setFileName("removed-background");
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
@@ -243,6 +250,24 @@ const RemoveBackground = () => {
                 >
                   Apply Background Color
                 </Button>
+              </div>
+            )}
+
+            {/* Filename Input */}
+            {processedImage && (
+              <div className="bg-muted/30 rounded-xl p-4 space-y-2">
+                <Label htmlFor="filename">File Name</Label>
+                <div className="flex gap-2 items-center">
+                  <Input
+                    id="filename"
+                    type="text"
+                    value={fileName}
+                    onChange={(e) => setFileName(e.target.value)}
+                    placeholder="Enter file name"
+                    className="flex-1"
+                  />
+                  <span className="text-muted-foreground">.png</span>
+                </div>
               </div>
             )}
 
