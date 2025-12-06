@@ -1,5 +1,39 @@
 import { Link } from "react-router-dom";
-import { Wrench, Heart } from "lucide-react";
+import { Wrench, Heart, QrCode } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import QRCode from "qrcode";
+const DonateSection = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [qrReady, setQrReady] = useState(false);
+  
+  useEffect(() => {
+    const upiLink = "upi://pay?pa=example@upi&pn=AllTool&am=&cu=INR";
+    if (canvasRef.current) {
+      QRCode.toCanvas(canvasRef.current, upiLink, {
+        width: 100,
+        margin: 1,
+        color: { dark: "#000000", light: "#ffffff" }
+      }).then(() => setQrReady(true));
+    }
+  }, []);
+
+  return (
+    <div>
+      <h3 className="font-semibold mb-4 flex items-center gap-2">
+        <Heart className="w-4 h-4 text-destructive" /> Support Us
+      </h3>
+      <p className="text-sm text-muted-foreground mb-3">
+        Help us keep AllTool.tech free forever! Your support means a lot.
+      </p>
+      <div className="bg-white rounded-lg p-2 w-fit">
+        <canvas ref={canvasRef} className="rounded" />
+      </div>
+      <p className="text-xs text-muted-foreground mt-2">
+        Scan QR to donate via UPI
+      </p>
+    </div>
+  );
+};
 
 const Footer = () => {
   const toolCategories = [
@@ -64,12 +98,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h3 className="font-semibold mb-4">Ad Space</h3>
-            <div className="ad-space h-32">
-              Advertisement
-            </div>
-          </div>
+          <DonateSection />
         </div>
 
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
