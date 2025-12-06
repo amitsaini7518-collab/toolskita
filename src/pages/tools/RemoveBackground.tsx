@@ -1,93 +1,130 @@
-import { useState } from "react";
-import { ImageMinus, Upload, Download, RotateCcw, Loader2 } from "lucide-react";
+import { useState, useRef } from "react";
+import { ImageMinus, Upload, Download, RotateCcw, Loader2, Palette } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
+import { removeBackground, loadImage, applyBackgroundColor } from "@/lib/removeBackground";
+
+const PRESET_COLORS = [
+  { name: "Transparent", value: "transparent" },
+  { name: "White", value: "#FFFFFF" },
+  { name: "Black", value: "#000000" },
+  { name: "Red", value: "#EF4444" },
+  { name: "Green", value: "#22C55E" },
+  { name: "Blue", value: "#3B82F6" },
+  { name: "Yellow", value: "#EAB308" },
+  { name: "Purple", value: "#A855F7" },
+  { name: "Pink", value: "#EC4899" },
+  { name: "Orange", value: "#F97316" },
+  { name: "Cyan", value: "#06B6D4" },
+  { name: "Gray", value: "#6B7280" },
+];
 
 const RemoveBackground = () => {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
+  const [originalFile, setOriginalFile] = useState<File | null>(null);
+  const [processedBlob, setProcessedBlob] = useState<Blob | null>(null);
   const [processedImage, setProcessedImage] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [selectedColor, setSelectedColor] = useState("transparent");
+  const [customColor, setCustomColor] = useState("#FFFFFF");
+  const [progress, setProgress] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    setOriginalFile(file);
     const reader = new FileReader();
     reader.onload = (e) => {
       setOriginalImage(e.target?.result as string);
       setProcessedImage(null);
+      setProcessedBlob(null);
     };
     reader.readAsDataURL(file);
   };
 
-  const removeBackground = async () => {
-    if (!originalImage) return;
+  const processBackground = async () => {
+    if (!originalFile) return;
 
     setIsProcessing(true);
-    toast.info("Processing image... This may take a moment.");
-
-    // Simulate background removal with a simple technique
-    // For production, use a proper API like remove.bg or ML model
+    setProgress("Loading AI model... (first time may take 30-60 seconds)");
+    
     try {
-      const img = new Image();
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
-
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-
-        // Simple background removal based on edge detection
-        // This is a basic implementation - real apps use ML models
-        const threshold = 230; // Adjust for white backgrounds
-        
-        for (let i = 0; i < data.length; i += 4) {
-          const r = data[i];
-          const g = data[i + 1];
-          const b = data[i + 2];
-          
-          // If pixel is close to white/light, make it transparent
-          if (r > threshold && g > threshold && b > threshold) {
-            data[i + 3] = 0; // Set alpha to 0
-          }
-        }
-
-        ctx.putImageData(imageData, 0, 0);
-        setProcessedImage(canvas.toDataURL("image/png"));
-        setIsProcessing(false);
-        toast.success("Background removed! Note: For best results, use a solid background.");
-      };
-      img.src = originalImage;
+      const img = await loadImage(originalFile);
+      setProgress("Removing background...");
+      
+      const resultBlob = await removeBackground(img);
+      setProcessedBlob(resultBlob);
+      
+      // Apply background color if not transparent
+      if (selectedColor !== "transparent") {
+        const colorToApply = selectedColor === "custom" ? customColor : selectedColor;
+        const coloredBlob = await applyBackgroundColor(resultBlob, colorToApply);
+        setProcessedImage(URL.createObjectURL(coloredBlob));
+      } else {
+        setProcessedImage(URL.createObjectURL(resultBlob));
+      }
+      
+      setProgress("");
+      toast.success("Background removed successfully!");
     } catch (error) {
+      console.error(error);
+      toast.error("Failed to process image. Please try again.");
+      setProgress("");
+    } finally {
       setIsProcessing(false);
-      toast.error("Failed to process image");
     }
   };
 
-  const handleDownload = () => {
+  const applyNewBackground = async () => {
+    if (!processedBlob) return;
+    
+    try {
+      if (selectedColor === "transparent") {
+        setProcessedImage(URL.createObjectURL(processedBlob));
+      } else {
+        const colorToApply = selectedColor === "custom" ? customColor : selectedColor;
+        const coloredBlob = await applyBackgroundColor(processedBlob, colorToApply);
+        setProcessedImage(URL.createObjectURL(coloredBlob));
+      }
+      toast.success("Background color applied!");
+    } catch (error) {
+      toast.error("Failed to apply background color");
+    }
+  };
+
+  const handleDownload = async () => {
     if (!processedImage) return;
+    
+    const response = await fetch(processedImage);
+    const blob = await response.blob();
     const link = document.createElement("a");
     link.download = "removed-background.png";
-    link.href = processedImage;
+    link.href = URL.createObjectURL(blob);
     link.click();
     toast.success("Image downloaded!");
   };
 
   const handleReset = () => {
     setOriginalImage(null);
+    setOriginalFile(null);
     setProcessedImage(null);
+    setProcessedBlob(null);
+    setSelectedColor("transparent");
+    setProgress("");
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
     <ToolLayout
       title="Remove Background"
-      description="Remove image background instantly"
+      description="Remove image background using AI and add custom background colors"
       icon={ImageMinus}
     >
       <div className="space-y-6">
@@ -95,8 +132,14 @@ const RemoveBackground = () => {
           <label className="flex flex-col items-center justify-center h-64 border-2 border-dashed border-border rounded-xl cursor-pointer hover:border-primary transition-colors">
             <Upload className="w-12 h-12 text-muted-foreground mb-4" />
             <span className="text-muted-foreground">Click to upload image</span>
-            <span className="text-sm text-muted-foreground mt-1">Works best with solid backgrounds</span>
-            <input type="file" accept="image/*" onChange={handleFileChange} className="hidden" />
+            <span className="text-sm text-muted-foreground mt-1">Supports JPG, PNG, WebP</span>
+            <input 
+              ref={fileInputRef}
+              type="file" 
+              accept="image/*" 
+              onChange={handleFileChange} 
+              className="hidden" 
+            />
           </label>
         ) : (
           <div className="space-y-6">
@@ -113,7 +156,14 @@ const RemoveBackground = () => {
               <div className="space-y-2">
                 <h3 className="font-medium">Processed</h3>
                 {processedImage ? (
-                  <div className="rounded-xl border border-border overflow-hidden" style={{ background: "repeating-conic-gradient(#80808033 0% 25%, transparent 0% 50%) 50% / 20px 20px" }}>
+                  <div 
+                    className="rounded-xl border border-border overflow-hidden" 
+                    style={{ 
+                      background: selectedColor === "transparent" 
+                        ? "repeating-conic-gradient(#80808033 0% 25%, transparent 0% 50%) 50% / 20px 20px" 
+                        : selectedColor === "custom" ? customColor : selectedColor
+                    }}
+                  >
                     <img 
                       src={processedImage} 
                       alt="Processed" 
@@ -122,38 +172,107 @@ const RemoveBackground = () => {
                   </div>
                 ) : (
                   <div className="w-full h-64 rounded-xl border border-border bg-muted/50 flex items-center justify-center">
-                    <span className="text-muted-foreground">Click "Remove Background" to process</span>
+                    {isProcessing ? (
+                      <div className="text-center">
+                        <Loader2 className="w-8 h-8 animate-spin mx-auto mb-2 text-primary" />
+                        <span className="text-muted-foreground text-sm">{progress}</span>
+                      </div>
+                    ) : (
+                      <span className="text-muted-foreground">Click "Remove Background" to process</span>
+                    )}
                   </div>
                 )}
               </div>
             </div>
 
+            {/* Background Color Selection */}
+            {processedBlob && (
+              <div className="bg-muted/30 rounded-xl p-4 space-y-4">
+                <div className="flex items-center gap-2">
+                  <Palette className="w-5 h-5 text-primary" />
+                  <h4 className="font-medium">Background Color</h4>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {PRESET_COLORS.map((color) => (
+                    <button
+                      key={color.value}
+                      onClick={() => setSelectedColor(color.value)}
+                      className={`w-10 h-10 rounded-lg border-2 transition-all ${
+                        selectedColor === color.value 
+                          ? "border-primary scale-110" 
+                          : "border-border hover:border-primary/50"
+                      }`}
+                      style={{ 
+                        background: color.value === "transparent" 
+                          ? "repeating-conic-gradient(#80808033 0% 25%, transparent 0% 50%) 50% / 10px 10px"
+                          : color.value 
+                      }}
+                      title={color.name}
+                    />
+                  ))}
+                  
+                  {/* Custom Color Picker */}
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => setSelectedColor("custom")}
+                      className={`w-10 h-10 rounded-lg border-2 transition-all ${
+                        selectedColor === "custom" 
+                          ? "border-primary scale-110" 
+                          : "border-border hover:border-primary/50"
+                      }`}
+                      style={{ background: customColor }}
+                      title="Custom Color"
+                    />
+                    <Input
+                      type="color"
+                      value={customColor}
+                      onChange={(e) => {
+                        setCustomColor(e.target.value);
+                        setSelectedColor("custom");
+                      }}
+                      className="w-12 h-10 p-1 cursor-pointer"
+                    />
+                  </div>
+                </div>
+                
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  onClick={applyNewBackground}
+                >
+                  Apply Background Color
+                </Button>
+              </div>
+            )}
+
             {/* Actions */}
             <div className="flex flex-wrap gap-4">
-              {!processedImage ? (
+              {!processedImage && !isProcessing && (
                 <Button 
                   variant="gradient" 
-                  onClick={removeBackground}
+                  onClick={processBackground}
                   disabled={isProcessing}
                 >
-                  {isProcessing ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      <ImageMinus className="w-4 h-4 mr-2" />
-                      Remove Background
-                    </>
-                  )}
+                  <ImageMinus className="w-4 h-4 mr-2" />
+                  Remove Background
                 </Button>
-              ) : (
+              )}
+              
+              {isProcessing && (
+                <Button variant="gradient" disabled>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Processing...
+                </Button>
+              )}
+              
+              {processedImage && (
                 <Button variant="gradient" onClick={handleDownload}>
                   <Download className="w-4 h-4 mr-2" />
                   Download PNG
                 </Button>
               )}
+              
               <Button variant="outline" onClick={handleReset}>
                 <RotateCcw className="w-4 h-4 mr-2" />
                 Reset
@@ -163,11 +282,12 @@ const RemoveBackground = () => {
         )}
 
         <div className="bg-muted/50 rounded-xl p-4">
-          <h4 className="font-medium mb-2">Tips for best results:</h4>
+          <h4 className="font-medium mb-2">Features:</h4>
           <ul className="text-sm text-muted-foreground space-y-1">
-            <li>• Use images with solid color backgrounds (white, green, etc.)</li>
-            <li>• Ensure good contrast between subject and background</li>
-            <li>• Higher resolution images give better results</li>
+            <li>• AI-powered background removal using machine learning</li>
+            <li>• Add custom background colors or keep transparent</li>
+            <li>• First-time use downloads the AI model (~30-60 seconds)</li>
+            <li>• Works best with clear subject in the image</li>
           </ul>
         </div>
       </div>
