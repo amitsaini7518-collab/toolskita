@@ -18,7 +18,7 @@ const DonateSection = () => {
   }, []);
 
   return (
-    <div>
+    <div id="donate">
       <h3 className="font-semibold mb-4 flex items-center gap-2">
         <Heart className="w-4 h-4 text-destructive" /> Support Us
       </h3>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wrench, Menu, X } from "lucide-react";
+import { Wrench, Menu, X, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -26,6 +26,10 @@ const Header = () => {
           <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
+          <a href="#donate" className="flex items-center gap-1.5 text-sm font-medium text-destructive hover:text-destructive/80 transition-colors">
+            <Heart className="w-4 h-4" />
+            Donate
+          </a>
           <Button variant="gradient" size="sm">
             Get Started
           </Button>
@@ -65,6 +69,14 @@ const Header = () => {
             >
               About
             </Link>
+            <a 
+              href="#donate" 
+              className="flex items-center gap-1.5 text-sm font-medium text-destructive hover:text-destructive/80 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Heart className="w-4 h-4" />
+              Donate
+            </a>
             <Button variant="gradient" size="sm" className="w-full">
               Get Started
             </Button>
