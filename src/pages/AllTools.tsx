@@ -4,7 +4,7 @@ import ToolCard from "@/components/home/ToolCard";
 import { 
   FileImage, FileText, Crop, Minimize2, Eraser, 
   Calendar, QrCode, Palette, ArrowRightLeft, Type,
-  Binary, Heart
+  Binary, Heart, FileDown
 } from "lucide-react";
 
 const tools = [
@@ -28,6 +28,13 @@ const tools = [
     icon: Crop,
     path: "/tools/image-cropper",
     color: "#10B981"
+  },
+  {
+    title: "KB Converter",
+    description: "Reduce to specific KB size",
+    icon: FileDown,
+    path: "/tools/kb-converter",
+    color: "#F59E0B"
   },
   {
     title: "Image Compressor",

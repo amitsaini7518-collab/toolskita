@@ -37,11 +37,18 @@ const tools = [
     color: "#8b5cf6",
   },
   {
+    title: "KB Converter",
+    description: "Reduce to specific KB without quality loss",
+    icon: FileDown,
+    path: "/tools/kb-converter",
+    color: "#f59e0b",
+  },
+  {
     title: "Image Compressor",
     description: "Reduce image size in KB/MB",
     icon: FileDown,
     path: "/tools/image-compressor",
-    color: "#f59e0b",
+    color: "#fb923c",
   },
   {
     title: "Remove Background",
