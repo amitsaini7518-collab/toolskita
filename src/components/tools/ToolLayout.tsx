@@ -23,7 +23,7 @@ const DonateBanner = () => {
           Love this tool? Support us!
         </h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Support to keep ads free and secure your data. Scan QR to donate via UPI.
+          Support to keep this free & secure. Scan QR to donate via UPI.
         </p>
       </div>
     </div>
