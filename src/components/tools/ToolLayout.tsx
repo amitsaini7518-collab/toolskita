@@ -1,8 +1,8 @@
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, LucideIcon, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import QRCode from "qrcode";
+import donateQr from "@/assets/donate-qr.png";
 
 interface ToolLayoutProps {
   title: string;
@@ -12,23 +12,10 @@ interface ToolLayoutProps {
 }
 
 const DonateBanner = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const upiLink = "upi://pay?pa=example@upi&pn=AllTool&am=&cu=INR";
-    if (canvasRef.current) {
-      QRCode.toCanvas(canvasRef.current, upiLink, {
-        width: 80,
-        margin: 1,
-        color: { dark: "#000000", light: "#ffffff" }
-      });
-    }
-  }, []);
-
   return (
     <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border border-primary/20 rounded-2xl p-4 flex flex-col sm:flex-row items-center gap-4">
       <div className="bg-white rounded-lg p-1.5 shrink-0">
-        <canvas ref={canvasRef} className="rounded" />
+        <img src={donateQr} alt="Donate QR Code" className="w-20 h-20 rounded" />
       </div>
       <div className="text-center sm:text-left">
         <h3 className="font-semibold flex items-center justify-center sm:justify-start gap-2 text-foreground">
@@ -36,7 +23,7 @@ const DonateBanner = () => {
           Love this tool? Support us!
         </h3>
         <p className="text-sm text-muted-foreground mt-1">
-          Help us keep AllTool.tech free forever. Scan QR to donate via UPI.
+          Support to keep ads free and secure your data. Scan QR to donate via UPI.
         </p>
       </div>
     </div>
