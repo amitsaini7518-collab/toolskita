@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 
 const ImageCropper = () => {
@@ -13,6 +14,8 @@ const ImageCropper = () => {
   const [isResizing, setIsResizing] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [fileName, setFileName] = useState("cropped-image");
+  const [showAdModal, setShowAdModal] = useState(false);
+  const [pendingCropData, setPendingCropData] = useState<string | null>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -67,7 +70,7 @@ const ImageCropper = () => {
     setIsResizing(false);
   };
 
-  const handleCrop = () => {
+  const prepareCrop = () => {
     if (!imageRef.current) return;
 
     const canvas = document.createElement("canvas");
@@ -93,10 +96,16 @@ const ImageCropper = () => {
       canvas.height
     );
 
+    setPendingCropData(canvas.toDataURL("image/png"));
+    setShowAdModal(true);
+  };
+
+  const handleDownload = () => {
+    if (!pendingCropData) return;
     const link = document.createElement("a");
     const finalName = fileName.trim() || "cropped-image";
     link.download = `${finalName}.png`;
-    link.href = canvas.toDataURL("image/png");
+    link.href = pendingCropData;
     link.click();
     toast.success("Image cropped and downloaded!");
   };
@@ -105,6 +114,8 @@ const ImageCropper = () => {
     setImage(null);
     setCropArea({ x: 0, y: 0, width: 200, height: 200 });
     setFileName("cropped-image");
+    setShowAdModal(false);
+    setPendingCropData(null);
   };
 
   return (
@@ -174,7 +185,7 @@ const ImageCropper = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Button variant="gradient" onClick={handleCrop}>
+            <Button variant="gradient" onClick={prepareCrop}>
               <Download className="w-4 h-4 mr-2" />
               Download Cropped
             </Button>
@@ -183,6 +194,13 @@ const ImageCropper = () => {
               Reset
             </Button>
           </div>
+
+          <AdDownloadModal
+            isOpen={showAdModal}
+            onClose={() => setShowAdModal(false)}
+            onDownload={handleDownload}
+            fileName={`${fileName.trim() || "cropped-image"}.png`}
+          />
         </div>
       )}
     </ToolLayout>

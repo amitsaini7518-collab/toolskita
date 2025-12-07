@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 import * as pdfjsLib from "pdfjs-dist";
 
@@ -15,6 +16,8 @@ const PDFToImage = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [pdfName, setPdfName] = useState<string>("");
   const [baseFileName, setBaseFileName] = useState("page");
+  const [showAdModal, setShowAdModal] = useState(false);
+  const [pendingDownload, setPendingDownload] = useState<{ type: "single"; index: number } | { type: "all" } | null>(null);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -82,10 +85,30 @@ const PDFToImage = () => {
     });
   };
 
+  const openDownloadModal = (type: "single" | "all", index?: number) => {
+    if (type === "single" && index !== undefined) {
+      setPendingDownload({ type: "single", index });
+    } else {
+      setPendingDownload({ type: "all" });
+    }
+    setShowAdModal(true);
+  };
+
+  const handleModalDownload = () => {
+    if (!pendingDownload) return;
+    if (pendingDownload.type === "single") {
+      downloadImage(images[pendingDownload.index], pendingDownload.index);
+    } else {
+      downloadAll();
+    }
+  };
+
   const handleReset = () => {
     setImages([]);
     setPdfName("");
     setBaseFileName("page");
+    setShowAdModal(false);
+    setPendingDownload(null);
   };
 
   return (
@@ -125,7 +148,7 @@ const PDFToImage = () => {
                 <p className="text-sm text-muted-foreground">{images.length} page(s) converted</p>
               </div>
               <div className="flex gap-2">
-                <Button variant="gradient" onClick={downloadAll}>
+                <Button variant="gradient" onClick={() => openDownloadModal("all")}>
                   <Download className="w-4 h-4 mr-2" />
                   Download All
                 </Button>
@@ -164,7 +187,7 @@ const PDFToImage = () => {
                     <Button
                       variant="gradient"
                       size="sm"
-                      onClick={() => downloadImage(img, index)}
+                      onClick={() => openDownloadModal("single", index)}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       Page {index + 1}
@@ -173,6 +196,16 @@ const PDFToImage = () => {
                 </div>
               ))}
             </div>
+
+            <AdDownloadModal
+              isOpen={showAdModal}
+              onClose={() => setShowAdModal(false)}
+              onDownload={handleModalDownload}
+              fileName={pendingDownload?.type === "single" 
+                ? `${baseFileName.trim() || "page"}-${(pendingDownload as { type: "single"; index: number }).index + 1}.png`
+                : `${baseFileName.trim() || "page"}-all.zip`
+              }
+            />
           </div>
         )}
       </div>
