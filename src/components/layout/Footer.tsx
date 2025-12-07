@@ -27,19 +27,25 @@ const SocialLinks = () => {
 
 const DonateSection = () => {
   return (
-    <div id="donate">
-      <h3 className="font-semibold mb-4 flex items-center gap-2">
-        <Heart className="w-4 h-4 text-destructive" /> Support Us
+    <div id="donate" className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-5 border border-primary/20">
+      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+        <Heart className="w-5 h-5 text-destructive animate-pulse" /> Support Us
       </h3>
-      <p className="text-sm text-muted-foreground mb-3">
-        Support to keep ads free and secure your data.
+      <p className="text-sm text-muted-foreground mb-4">
+        Help us keep this free, ad-free & secure for everyone!
       </p>
-      <div className="bg-white rounded-lg p-2 w-fit">
-        <img src={donateQr} alt="Donate QR Code" className="w-32 h-32 rounded" />
+      <div className="bg-white rounded-xl p-3 w-fit shadow-lg mx-auto md:mx-0">
+        <img src={donateQr} alt="Donate QR Code" className="w-36 h-36 rounded-lg" />
       </div>
-      <p className="text-xs text-muted-foreground mt-2">
-        Scan QR to donate via UPI
+      <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1">
+        📱 Scan QR to donate via UPI
       </p>
+      <a 
+        href="#donate" 
+        className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-primary text-primary-foreground rounded-full font-medium text-sm hover:opacity-90 transition-opacity shadow-md"
+      >
+        <Heart className="w-4 h-4" /> Donate Now
+      </a>
       <SocialLinks />
     </div>
   );
