@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
-import { Wrench, Heart } from "lucide-react";
+import { Wrench, Heart, Linkedin, Github } from "lucide-react";
 import donateQr from "@/assets/donate-qr.png";
+
+const SocialLinks = () => {
+  return (
+    <div className="flex items-center gap-4 mt-4">
+      <a 
+        href="https://linkedin.com/in/yourprofile" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-muted-foreground hover:text-primary transition-colors"
+      >
+        <Linkedin className="w-5 h-5" />
+      </a>
+      <a 
+        href="https://github.com/yourprofile" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-muted-foreground hover:text-primary transition-colors"
+      >
+        <Github className="w-5 h-5" />
+      </a>
+    </div>
+  );
+};
 
 const DonateSection = () => {
   return (
@@ -12,11 +35,12 @@ const DonateSection = () => {
         Support to keep ads free and secure your data.
       </p>
       <div className="bg-white rounded-lg p-2 w-fit">
-        <img src={donateQr} alt="Donate QR Code" className="w-24 h-24 rounded" />
+        <img src={donateQr} alt="Donate QR Code" className="w-32 h-32 rounded" />
       </div>
       <p className="text-xs text-muted-foreground mt-2">
         Scan QR to donate via UPI
       </p>
+      <SocialLinks />
     </div>
   );
 };
