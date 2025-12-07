@@ -32,7 +32,7 @@ const DonateSection = () => {
         <Heart className="w-5 h-5 text-destructive animate-pulse" /> Support Us
       </h3>
       <p className="text-sm text-muted-foreground mb-4">
-        Help us keep this free, ad-free & secure for everyone!
+        Help us keep this free & secure for everyone!
       </p>
       <div className="bg-white rounded-xl p-3 w-fit shadow-lg mx-auto md:mx-0">
         <img src={donateQr} alt="Donate QR Code" className="w-36 h-36 rounded-lg" />
