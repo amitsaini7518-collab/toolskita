@@ -4,20 +4,20 @@ import donateQr from "@/assets/donate-qr.png";
 
 const SocialLinks = () => {
   return (
-    <div className="flex items-center gap-4 mt-4">
+    <div className="flex items-center gap-3 mt-4">
       <a 
         href="https://www.linkedin.com/in/amit-saini-779aa138a" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="text-muted-foreground hover:text-primary transition-colors"
+        className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#0077B5] text-white hover:opacity-80 transition-opacity"
       >
         <Linkedin className="w-5 h-5" />
       </a>
       <a 
-        href="https://github.com/yourprofile" 
+        href="https://github.com/amit-kumar-saini" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="text-muted-foreground hover:text-primary transition-colors"
+        className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#333] text-white hover:opacity-80 transition-opacity"
       >
         <Github className="w-5 h-5" />
       </a>
