@@ -13,7 +13,7 @@ const Header = () => {
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
             <Wrench className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold gradient-text">AllTool.tech</span>
+          <span className="text-xl font-bold gradient-text">ToolsKit.tech</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
