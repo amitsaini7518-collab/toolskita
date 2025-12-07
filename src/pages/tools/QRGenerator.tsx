@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 import QRCode from "qrcode";
 
@@ -11,6 +12,7 @@ const QRGenerator = () => {
   const [text, setText] = useState("");
   const [qrDataUrl, setQrDataUrl] = useState<string>("");
   const [fileName, setFileName] = useState("qrcode");
+  const [showAdModal, setShowAdModal] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const generateQR = async (inputText: string) => {
@@ -47,6 +49,11 @@ const QRGenerator = () => {
     link.href = qrDataUrl;
     link.click();
     toast.success("QR Code downloaded!");
+  };
+
+  const openDownloadModal = () => {
+    if (!qrDataUrl) return;
+    setShowAdModal(true);
   };
 
   const handleCopy = async () => {
@@ -108,7 +115,7 @@ const QRGenerator = () => {
               </div>
               
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button variant="gradient" onClick={handleDownload}>
+                <Button variant="gradient" onClick={openDownloadModal}>
                   <Download className="w-4 h-4 mr-2" />
                   Download PNG
                 </Button>
@@ -117,6 +124,13 @@ const QRGenerator = () => {
                   Copy to Clipboard
                 </Button>
               </div>
+              
+              <AdDownloadModal
+                isOpen={showAdModal}
+                onClose={() => setShowAdModal(false)}
+                onDownload={handleDownload}
+                fileName={`${fileName.trim() || "qrcode"}.png`}
+              />
             </div>
           )}
         </div>

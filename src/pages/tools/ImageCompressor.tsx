@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 
 const ImageCompressor = () => {
@@ -14,6 +15,7 @@ const ImageCompressor = () => {
   const [compressedSize, setCompressedSize] = useState<number>(0);
   const [compressedImage, setCompressedImage] = useState<string | null>(null);
   const [fileName, setFileName] = useState("compressed-image");
+  const [showAdModal, setShowAdModal] = useState(false);
 
   const formatSize = (bytes: number) => {
     if (bytes < 1024) return `${bytes} B`;
@@ -75,6 +77,11 @@ const ImageCompressor = () => {
     link.href = compressedImage;
     link.click();
     toast.success("Compressed image downloaded!");
+  };
+
+  const openDownloadModal = () => {
+    if (!compressedImage) return;
+    setShowAdModal(true);
   };
 
   const handleReset = () => {
@@ -163,7 +170,7 @@ const ImageCompressor = () => {
 
           {/* Actions */}
           <div className="flex flex-wrap gap-4">
-            <Button variant="gradient" onClick={handleDownload}>
+            <Button variant="gradient" onClick={openDownloadModal}>
               <Download className="w-4 h-4 mr-2" />
               Download Compressed
             </Button>
@@ -172,6 +179,13 @@ const ImageCompressor = () => {
               Reset
             </Button>
           </div>
+
+          <AdDownloadModal
+            isOpen={showAdModal}
+            onClose={() => setShowAdModal(false)}
+            onDownload={handleDownload}
+            fileName={`${fileName.trim() || "compressed-image"}.jpg`}
+          />
         </div>
       )}
     </ToolLayout>

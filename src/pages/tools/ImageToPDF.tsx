@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FileImage, Upload, Download, X, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 import { jsPDF } from "jspdf";
 
@@ -11,6 +12,7 @@ import { Label } from "@/components/ui/label";
 const ImageToPDF = () => {
   const [images, setImages] = useState<{ id: string; src: string; name: string }[]>([]);
   const [fileName, setFileName] = useState("converted");
+  const [showAdModal, setShowAdModal] = useState(false);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -74,6 +76,14 @@ const ImageToPDF = () => {
       console.error("PDF generation error:", error);
       toast.error("Failed to create PDF. Please try again.");
     }
+  };
+
+  const openDownloadModal = () => {
+    if (images.length === 0) {
+      toast.error("Please add at least one image");
+      return;
+    }
+    setShowAdModal(true);
   };
 
   return (
@@ -154,10 +164,17 @@ const ImageToPDF = () => {
               </div>
             </div>
 
-            <Button variant="gradient" onClick={generatePDF} className="w-full">
+            <Button variant="gradient" onClick={openDownloadModal} className="w-full">
               <Download className="w-4 h-4 mr-2" />
               Convert to PDF
             </Button>
+
+            <AdDownloadModal
+              isOpen={showAdModal}
+              onClose={() => setShowAdModal(false)}
+              onDownload={generatePDF}
+              fileName={`${fileName.trim() || "converted"}.pdf`}
+            />
           </div>
         )}
       </div>
