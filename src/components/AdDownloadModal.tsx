@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import {
   Dialog,
   DialogContent,
@@ -6,6 +6,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Download, Clock } from "lucide-react";
+
+declare global {
+  interface Window {
+    adsbygoogle: unknown[];
+  }
+}
 
 interface AdDownloadModalProps {
   isOpen: boolean;
@@ -22,6 +28,24 @@ export const AdDownloadModal = ({
 }: AdDownloadModalProps) => {
   const [countdown, setCountdown] = useState(5);
   const [isComplete, setIsComplete] = useState(false);
+  const adRef = useRef<HTMLModElement>(null);
+  const adLoadedRef = useRef(false);
+
+  // Initialize AdSense when modal opens
+  useEffect(() => {
+    if (isOpen && !adLoadedRef.current && adRef.current) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        adLoadedRef.current = true;
+      } catch (e) {
+        console.error("AdSense error:", e);
+      }
+    }
+    
+    if (!isOpen) {
+      adLoadedRef.current = false;
+    }
+  }, [isOpen]);
 
   const handleComplete = useCallback(() => {
     setIsComplete(true);
@@ -75,13 +99,15 @@ export const AdDownloadModal = ({
             )}
           </div>
 
-          {/* AdSense Placeholder */}
-          <div className="w-[300px] h-[250px] bg-muted rounded-lg flex items-center justify-center border-2 border-dashed border-border">
-            <span className="text-muted-foreground text-sm text-center px-4">
-              Advertisement
-              <br />
-              <span className="text-xs">(Google AdSense 300x250)</span>
-            </span>
+          {/* AdSense Container */}
+          <div className="w-[300px] h-[250px] bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+            <ins
+              ref={adRef}
+              className="adsbygoogle"
+              style={{ display: "inline-block", width: 300, height: 250 }}
+              data-ad-client="ca-pub-1909827564331292"
+              data-ad-slot="6244673247"
+            />
           </div>
 
           {/* File name info */}
