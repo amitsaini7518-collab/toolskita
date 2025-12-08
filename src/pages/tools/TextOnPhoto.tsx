@@ -68,12 +68,7 @@ const TextOnPhoto = () => {
   };
 
   // Redraw when settings change
-  useState(() => {
-    if (image) {
-      drawCanvas();
-    }
-  });
-
+  // Note: updateSettings() handles redrawing via setTimeout
   const handleDownload = () => {
     if (!canvasRef.current) return;
     drawCanvas();
