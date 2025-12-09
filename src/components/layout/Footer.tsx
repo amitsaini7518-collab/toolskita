@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
-import { Wrench, Heart, Linkedin, Github } from "lucide-react";
+import { Wrench, Heart, Linkedin } from "lucide-react";
 import donateQr from "@/assets/donate-qr.png";
+
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 const SocialLinks = () => {
   return (
     <div className="flex items-center gap-3 mt-4">
       <a 
-        href="https://www.linkedin.com/in/amit-saini-779aa138a" 
+        href="https://www.linkedin.com/in/amit-kumar-saini-38b6143a0/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#0077B5] text-white hover:opacity-80 transition-opacity"
@@ -14,12 +20,12 @@ const SocialLinks = () => {
         <Linkedin className="w-5 h-5" />
       </a>
       <a 
-        href="https://github.com/amit-kumar-saini" 
+        href="https://x.com/AmitSaini184544" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#333] text-white hover:opacity-80 transition-opacity"
+        className="flex items-center justify-center w-10 h-10 rounded-lg bg-black text-white hover:opacity-80 transition-opacity"
       >
-        <Github className="w-5 h-5" />
+        <XIcon />
       </a>
     </div>
   );
