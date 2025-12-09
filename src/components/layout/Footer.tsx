@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Wrench, Heart, Linkedin } from "lucide-react";
+import { Wrench, Heart, Linkedin, Github } from "lucide-react";
 import donateQr from "@/assets/donate-qr.png";
 
 const XIcon = () => (
@@ -26,6 +26,14 @@ const SocialLinks = () => {
         className="flex items-center justify-center w-10 h-10 rounded-lg bg-black text-white hover:opacity-80 transition-opacity"
       >
         <XIcon />
+      </a>
+      <a 
+        href="https://github.com/amit-kumar-saini" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-10 h-10 rounded-lg bg-[#333] text-white hover:opacity-80 transition-opacity"
+      >
+        <Github className="w-5 h-5" />
       </a>
     </div>
   );
