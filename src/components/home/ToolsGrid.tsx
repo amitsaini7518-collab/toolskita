@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { 
   FileImage, 
   FileText, 
@@ -10,9 +11,11 @@ import {
   FileDown,
   Type,
   Calendar,
-  Hash
+  Hash,
+  ArrowRight
 } from "lucide-react";
 import ToolCard from "./ToolCard";
+import { Button } from "@/components/ui/button";
 
 const tools = [
   {
@@ -110,7 +113,7 @@ const tools = [
 
 const ToolsGrid = () => {
   return (
-    <section className="py-16">
+    <section className="py-16" id="tools">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -125,6 +128,36 @@ const ToolsGrid = () => {
           {tools.map((tool) => (
             <ToolCard key={tool.path} {...tool} />
           ))}
+        </div>
+        
+        {/* View All Tools CTA */}
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/tools">
+              View All Tools
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+        
+        {/* SEO Content Section */}
+        <div className="mt-16 prose prose-sm max-w-4xl mx-auto text-muted-foreground">
+          <h3 className="text-xl font-semibold text-foreground mb-4">Why Choose ToolsKit.tech?</h3>
+          <p>
+            ToolsKit.tech is your one-stop destination for <strong>free online tools</strong>. Whether you need to 
+            <Link to="/tools/image-compressor" className="text-primary hover:underline mx-1">compress images</Link>, 
+            <Link to="/tools/image-to-pdf" className="text-primary hover:underline mx-1">convert images to PDF</Link>, 
+            <Link to="/tools/remove-background" className="text-primary hover:underline mx-1">remove backgrounds with AI</Link>, or 
+            <Link to="/tools/qr-generator" className="text-primary hover:underline mx-1">generate QR codes</Link> - 
+            we've got you covered. All tools are 100% free, require no signup, and process everything locally in your browser for maximum privacy.
+          </p>
+          <p className="mt-4">
+            Our tools include <Link to="/tools/age-calculator" className="text-primary hover:underline">age calculator</Link>, 
+            <Link to="/tools/bmi-calculator" className="text-primary hover:underline mx-1">BMI calculator</Link>, 
+            <Link to="/tools/color-picker" className="text-primary hover:underline mx-1">color picker</Link>, 
+            <Link to="/tools/unit-converter" className="text-primary hover:underline mx-1">unit converter</Link>, and many more. 
+            Bookmark this page and use our tools anytime, anywhere!
+          </p>
         </div>
       </div>
     </section>
