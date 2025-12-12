@@ -1,9 +1,16 @@
 // Centralized SEO data for all tools
+export interface ToolArticle {
+  introduction: string;
+  howToUse: string;
+  keyFeatures: string[];
+}
+
 export interface ToolSEO {
   title: string;
   description: string;
   keywords: string;
   faqs: { question: string; answer: string }[];
+  article?: ToolArticle;
 }
 
 export const toolsSEO: Record<string, ToolSEO> = {
@@ -28,7 +35,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Is my image data safe?",
         answer: "Yes! All image processing happens locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security."
       }
-    ]
+    ],
+    article: {
+      introduction: "In today's digital world, large image files can slow down websites, consume excessive storage, and make sharing difficult. Our free online Image Compressor tool solves these problems by reducing image file sizes without compromising visual quality. Whether you're a blogger optimizing website images, a business owner preparing product photos for e-commerce, or simply someone who wants to save storage space, this tool is designed for you. Image compression is essential for faster website loading times, improved SEO rankings, reduced bandwidth costs, and easier file sharing via email or messaging apps. Our intelligent compression algorithm analyzes each image and applies the optimal compression ratio to maintain clarity while dramatically reducing file size. The best part? Everything happens right in your browser – your images never leave your device, ensuring complete privacy and security.",
+      howToUse: "Using our Image Compressor is incredibly simple and takes just a few seconds. First, click the upload area or drag and drop your image file directly onto the page. We support all popular formats including JPG, JPEG, PNG, WebP, and GIF. Once uploaded, you'll see a preview of your image along with the original file size. Next, adjust the quality slider to set your desired compression level – we recommend 80% for the best balance between quality and file size. Higher values preserve more detail but result in larger files, while lower values create smaller files with more compression. After selecting your preferred quality, click the 'Compress' button and watch as the tool processes your image instantly. Finally, review the compressed result, check the new file size, and click 'Download' to save your optimized image. You can compress multiple images one after another without any limits.",
+      keyFeatures: [
+        "100% Free – No hidden fees, subscriptions, or watermarks on your compressed images",
+        "Browser-Based Processing – All compression happens locally on your device for maximum privacy",
+        "Smart Compression Algorithm – Intelligent analysis ensures optimal quality-to-size ratio",
+        "Multiple Format Support – Works with JPG, JPEG, PNG, WebP, GIF, and more",
+        "Adjustable Quality Settings – Full control over compression level with real-time preview",
+        "Instant Results – Lightning-fast processing with immediate download availability",
+        "No File Size Limits – Compress images of any size without restrictions",
+        "No Registration Required – Start compressing immediately without creating an account"
+      ]
+    }
   },
   "image-cropper": {
     title: "Free Image Cropper Online - Crop Photos Instantly",
@@ -47,7 +68,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What's the best aspect ratio for social media?",
         answer: "Instagram posts: 1:1 (square) or 4:5 (portrait). Instagram stories: 9:16. Facebook: 1.91:1. Twitter: 16:9. YouTube thumbnail: 16:9."
       }
-    ]
+    ],
+    article: {
+      introduction: "Cropping images is one of the most fundamental yet essential photo editing tasks. Our free online Image Cropper tool allows you to precisely trim and resize your photos to any dimension or aspect ratio you need. Whether you're preparing profile pictures for social media, creating passport-sized photos for official documents, or simply removing unwanted areas from your shots, this tool makes it effortless. Proper image cropping improves composition by following the rule of thirds, removes distracting elements from the frame, and ensures your images meet specific size requirements for various platforms. Social media platforms like Instagram, Facebook, Twitter, and LinkedIn all have different optimal image dimensions, and using incorrectly sized images can result in awkward cropping or reduced quality. Our cropper gives you complete control over how your images appear across all platforms.",
+      howToUse: "Getting started with our Image Cropper is quick and intuitive. Begin by uploading your image – simply click the upload area or drag and drop your photo directly. Once your image loads, you'll see the cropping interface with a selection box overlay. Choose from preset aspect ratios like 1:1 (perfect square for Instagram posts), 16:9 (ideal for YouTube thumbnails and Twitter headers), 4:3 (standard photo ratio), 9:16 (Instagram and Facebook Stories), or select 'Free' for custom dimensions. After selecting your ratio, click and drag the crop box to position it over the area you want to keep. You can also resize the crop area by dragging the corners or edges. Use the preview to ensure you're capturing exactly what you want. When satisfied, click the 'Crop' button to apply your selection. Finally, enter a filename if desired and click 'Download' to save your perfectly cropped image.",
+      keyFeatures: [
+        "Multiple Preset Ratios – Quick access to popular aspect ratios for social media and documents",
+        "Free-Form Cropping – Create custom crop areas of any size and shape",
+        "Drag and Position – Intuitive interface for precise crop placement",
+        "Passport Photo Ready – Perfect for creating photos for official documents and IDs",
+        "Social Media Optimized – Presets for Instagram, Facebook, Twitter, YouTube, and more",
+        "Real-Time Preview – See exactly how your cropped image will look before saving",
+        "High-Quality Output – Maintains original image quality in the cropped result",
+        "Works Offline – All processing happens in your browser with no internet required after loading"
+      ]
+    }
   },
   "remove-background": {
     title: "Free Background Remover Online - Remove Image Background AI",
@@ -66,7 +101,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Can I get a transparent background?",
         answer: "Yes! The output is a PNG file with a transparent background, perfect for use in designs, presentations, or e-commerce listings."
       }
-    ]
+    ],
+    article: {
+      introduction: "Removing backgrounds from images used to require expensive software and advanced editing skills. Our free AI-powered Background Remover changes everything by automatically detecting and isolating subjects from their backgrounds in seconds. This revolutionary tool uses cutting-edge machine learning technology to analyze your images and precisely separate the foreground subject from the background. Perfect for e-commerce product photography, professional headshots, social media content creation, graphic design projects, and marketing materials. Whether you're creating product listings for online stores, designing flyers and posters, making profile pictures, or preparing images for presentations, transparent backgrounds give you the flexibility to place your subject on any background. Our AI handles complex edges like hair, fur, and intricate details that would take hours to manually select with traditional editing tools.",
+      howToUse: "Removing backgrounds with our AI tool is remarkably simple. Start by clicking the upload area or dragging your image onto the page. Our AI immediately begins analyzing your image, identifying the main subject, and processing the background removal. This typically takes just a few seconds depending on image complexity. Once processing completes, you'll see your image with the background removed and replaced with a checkerboard pattern indicating transparency. Want a colored background instead? Use our color picker to select from preset colors or choose any custom color you prefer. The live preview shows exactly how your final image will look. When you're satisfied with the result, enter a custom filename and click 'Download' to save your image as a PNG with transparency (or with your chosen background color). You can process multiple images consecutively without any limits or restrictions.",
+      keyFeatures: [
+        "AI-Powered Detection – Advanced machine learning accurately identifies subjects and edges",
+        "Instant Processing – Get results in seconds, not minutes or hours",
+        "Transparent PNG Output – Perfect for use in designs, websites, and presentations",
+        "Custom Background Colors – Replace backgrounds with any color of your choice",
+        "Hair and Fur Detection – Handles complex edges that manual editing struggles with",
+        "No Software Required – Works entirely in your web browser",
+        "Privacy Protected – Images are processed locally and never uploaded to servers",
+        "Unlimited Usage – Process as many images as you need completely free"
+      ]
+    }
   },
   "image-to-pdf": {
     title: "Free Image to PDF Converter Online - Convert JPG to PDF",
@@ -85,7 +134,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Is there a limit on the number of images?",
         answer: "No strict limit! You can add as many images as you need. Processing happens in your browser, so more images may take slightly longer."
       }
-    ]
+    ],
+    article: {
+      introduction: "Converting images to PDF format is essential for creating professional documents, portfolios, and presentations. Our free Image to PDF Converter allows you to transform single or multiple images into a unified PDF document instantly. PDFs are universally compatible, maintain consistent formatting across all devices, and are the preferred format for sharing professional documents. Whether you're compiling scanned documents, creating photo albums, preparing presentations, or archiving important images, converting to PDF ensures your files remain organized and accessible. This tool is particularly useful for students submitting assignments, professionals creating reports, photographers sharing portfolios, and anyone needing to combine multiple images into a single, easily shareable file. Unlike other converters, our tool adds no watermarks, requires no registration, and processes everything locally for maximum privacy.",
+      howToUse: "Converting your images to PDF takes just moments with our intuitive tool. Begin by clicking the upload area or dragging and dropping your image files. You can select multiple images at once to create a multi-page PDF. After uploading, you'll see thumbnails of all your images in order. Rearrange the order by dragging and dropping thumbnails to ensure pages appear in your desired sequence. Each image will become one page in the final PDF, maintaining the original image quality and dimensions. Once you've arranged your images, enter a custom filename for your PDF document. Click the 'Convert to PDF' button to generate your document. The processing happens instantly in your browser. When complete, click 'Download' to save your PDF. For multi-page documents, each image is scaled to fit standard page dimensions while preserving aspect ratios.",
+      keyFeatures: [
+        "Multiple Image Support – Combine unlimited images into a single PDF document",
+        "Drag-and-Drop Ordering – Easily rearrange page order before conversion",
+        "All Formats Accepted – Works with JPG, JPEG, PNG, WebP, GIF, BMP, and more",
+        "No Watermarks – Your PDFs are clean and professional without any branding",
+        "Instant Conversion – Fast processing happens right in your browser",
+        "Original Quality Preserved – Images maintain their resolution in the PDF",
+        "Custom Filenames – Name your PDF exactly as you want before downloading",
+        "Completely Private – Files never leave your device during processing"
+      ]
+    }
   },
   "pdf-to-image": {
     title: "Free PDF to Image Converter Online - Convert PDF to JPG/PNG",
@@ -100,7 +163,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What's the image quality of converted PDFs?",
         answer: "We convert PDFs at high resolution to ensure excellent image quality. The output maintains the original PDF quality as much as possible."
       }
-    ]
+    ],
+    article: {
+      introduction: "Need to extract images from a PDF or convert PDF pages into shareable image files? Our free PDF to Image Converter transforms each page of your PDF document into high-quality PNG images instantly. This is incredibly useful when you need to share PDF content on social media, include PDF pages in presentations, edit PDF content in image editing software, or simply view PDF pages as individual images. Many platforms don't support direct PDF uploads, making image conversion essential for sharing documents online. Our converter maintains the original quality and resolution of your PDF content, ensuring text remains sharp and graphics stay crisp. Whether you're converting contracts, presentations, ebooks, or scanned documents, each page is rendered as a separate image file ready for download.",
+      howToUse: "Converting PDF pages to images is straightforward with our tool. Click the upload area or drag your PDF file onto the page. Once uploaded, the converter automatically processes your PDF, extracting each page as a separate PNG image. You'll see a progress indicator while larger PDFs are being processed. When complete, all pages appear as thumbnail previews in a grid layout. You can download individual pages by clicking the download button on each thumbnail, or use the 'Download All' button to save every page at once. Each image is named with the page number for easy organization. Before downloading, you can customize the base filename to keep your files organized. The converter handles PDFs of any size, though very large documents may take a few moments longer to process entirely in your browser.",
+      keyFeatures: [
+        "Full PDF Conversion – Every page is converted to a separate high-quality image",
+        "PNG Format Output – Universal format compatible with all devices and platforms",
+        "Batch Download – Download all pages at once or select individual pages",
+        "High Resolution – Maintains original PDF quality and clarity in images",
+        "Preview Grid – See all converted pages before downloading",
+        "Custom Naming – Set your preferred filename for organized downloads",
+        "No Page Limits – Convert PDFs with any number of pages",
+        "Secure Processing – All conversion happens locally in your browser"
+      ]
+    }
   },
   "qr-generator": {
     title: "Free QR Code Generator Online - Create QR Codes Instantly",
@@ -119,7 +196,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What can I encode in a QR code?",
         answer: "You can encode URLs, plain text, phone numbers, email addresses, WiFi credentials, and more. Simply enter the information and generate your QR code."
       }
-    ]
+    ],
+    article: {
+      introduction: "QR codes have become an essential tool for bridging the physical and digital worlds. Our free QR Code Generator creates scannable codes instantly for any URL, text, or data you need to share. QR codes are everywhere – from restaurant menus and business cards to marketing materials and product packaging. They provide a quick, contactless way for people to access websites, download apps, connect to WiFi, save contact information, and much more. Creating professional QR codes used to require expensive software or paid services, but our tool makes it completely free and instant. Whether you're a business owner, marketer, event organizer, or individual user, generating custom QR codes has never been easier. Every smartphone can scan QR codes using the built-in camera, making them universally accessible.",
+      howToUse: "Creating a QR code takes just seconds with our generator. Simply type or paste your content into the input field – this can be a website URL, plain text, phone number, email address, WiFi credentials, or any other information you want to encode. As you type, your QR code generates in real-time, instantly displaying the scannable code on screen. The QR code automatically updates with every character you add or remove. Test your QR code by scanning it with your smartphone camera to ensure it works correctly. Once satisfied, enter a custom filename for your download. Click the 'Download' button to save your QR code as a high-quality PNG image. You can also use the 'Copy' button to copy the QR code image directly to your clipboard for quick pasting into documents or designs.",
+      keyFeatures: [
+        "Instant Generation – QR codes appear in real-time as you type",
+        "Multiple Data Types – Encode URLs, text, WiFi passwords, contacts, and more",
+        "High-Quality PNG – Download crisp, print-ready QR code images",
+        "Copy to Clipboard – Quickly paste QR codes into documents and designs",
+        "Universal Compatibility – Works with all QR code scanning apps",
+        "No Size Limits – Encode short or long text and URLs",
+        "Print Ready – High resolution suitable for business cards to billboards",
+        "Completely Free – No watermarks, no limits, no registration required"
+      ]
+    }
   },
   "age-calculator": {
     title: "Free Age Calculator Online - Calculate Exact Age from Birthdate",
@@ -134,7 +225,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Can I calculate age for any date?",
         answer: "Yes! You can calculate age from any past date. Enter the birth date and get the precise age difference from today."
       }
-    ]
+    ],
+    article: {
+      introduction: "Ever wondered exactly how old you are down to the day, hour, or even minute? Our free Age Calculator provides precise age calculations from any date of birth. While knowing your age in years is simple, understanding your exact age in months, weeks, days, hours, and minutes reveals fascinating insights about your time on Earth. This tool is perfect for birthday celebrations, filling out official forms requiring exact age, calculating age differences between people, determining eligibility for age-restricted activities, and satisfying your curiosity about time. Age calculations are also essential for astrology enthusiasts, medical purposes, legal documentation, and milestone tracking. Our calculator handles all the complex mathematics including leap years, varying month lengths, and time zone considerations to give you the most accurate result possible.",
+      howToUse: "Using our Age Calculator is effortless and instant. Start by clicking on the date input field – a calendar picker will appear for easy date selection. Select your birth date by choosing the year, month, and day. Alternatively, you can type the date directly in the input field. Once you've entered your birth date, the calculator immediately displays your age in multiple formats. You'll see your age broken down into years, months, and days for a precise measurement. Additionally, view your total age in months, weeks, days, hours, and minutes for a complete perspective on your time alive. The calculator updates in real-time, so you can watch the minutes tick by. You can also calculate the age of anyone else by entering their birth date – great for comparing ages or calculating how old historical figures would be today.",
+      keyFeatures: [
+        "Precise Calculations – Accurate to the minute with real-time updates",
+        "Multiple Formats – View age in years, months, weeks, days, hours, and minutes",
+        "Leap Year Handling – Correctly calculates ages for February 29th birthdays",
+        "Historical Dates – Calculate age from any past date in history",
+        "Birthday Countdown – See how long until your next birthday",
+        "Easy Date Picker – Calendar interface for quick date selection",
+        "Instant Results – No button clicks needed, results appear automatically",
+        "Mobile Friendly – Works perfectly on phones and tablets"
+      ]
+    }
   },
   "bmi-calculator": {
     title: "Free BMI Calculator Online - Calculate Body Mass Index",
@@ -149,7 +254,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What is a healthy BMI range?",
         answer: "A healthy BMI is typically between 18.5 and 24.9. Below 18.5 is underweight, 25-29.9 is overweight, and 30+ is considered obese."
       }
-    ]
+    ],
+    article: {
+      introduction: "Body Mass Index (BMI) is one of the most widely used health metrics for assessing whether your weight falls within a healthy range for your height. Our free BMI Calculator provides instant results along with personalized health category information. BMI is used by healthcare professionals worldwide as a preliminary screening tool for weight-related health risks. While BMI doesn't directly measure body fat, research has shown strong correlations between BMI and body fat percentage in most individuals. Understanding your BMI can help you set realistic health goals, track your fitness journey, and have informed conversations with your healthcare provider. This tool is particularly useful for general health awareness, fitness planning, medical assessments, and insurance applications that require BMI information.",
+      howToUse: "Calculating your BMI takes just seconds with our user-friendly tool. First, enter your height – you can input this in centimeters or feet and inches depending on your preference. Next, enter your current weight in kilograms or pounds. The calculator automatically processes your inputs and displays your BMI score immediately. Along with your numerical BMI, you'll see your health category: Underweight (below 18.5), Normal weight (18.5-24.9), Overweight (25-29.9), or Obese (30 and above). The visual indicator helps you quickly understand where you fall on the spectrum. For the most accurate results, measure yourself in the morning before eating, wearing light clothing. Remember that BMI is a screening tool and doesn't account for muscle mass, bone density, or body composition, so athletes and individuals with high muscle mass may show elevated BMI despite being healthy.",
+      keyFeatures: [
+        "Instant Calculation – Get your BMI result immediately upon entering values",
+        "Health Categories – Clear classification of your weight status",
+        "Visual Indicator – Easy-to-understand graphical representation",
+        "Dual Unit Support – Works with both metric and imperial measurements",
+        "Educational Information – Learn what your BMI means for your health",
+        "Privacy Protected – All calculations happen locally in your browser",
+        "Mobile Optimized – Easy to use on any device",
+        "No Registration – Calculate your BMI without creating an account"
+      ]
+    }
   },
   "color-picker": {
     title: "Free Color Picker Online - Get HEX, RGB, HSL Color Codes",
@@ -164,7 +283,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What's the difference between HEX, RGB, and HSL?",
         answer: "HEX uses hexadecimal values (#FF5733), RGB uses red/green/blue values (255, 87, 51), and HSL uses hue/saturation/lightness (14°, 100%, 60%). All represent the same color differently."
       }
-    ]
+    ],
+    article: {
+      introduction: "Colors are fundamental to design, and getting the exact right shade can make or break a project. Our free Color Picker tool allows designers, developers, and creators to select any color and instantly get its code in multiple formats. Whether you're designing a website, creating graphics, developing an app, or working on any creative project, having access to precise color codes is essential. Colors in digital design are represented in various formats: HEX codes are commonly used in web development and HTML/CSS, RGB values are standard in digital imaging and screen displays, and HSL provides an intuitive way to adjust hue, saturation, and lightness. Our tool displays all these formats simultaneously, eliminating the need for manual conversion and ensuring consistency across your projects.",
+      howToUse: "Finding the perfect color and its code is effortless with our Color Picker. Click anywhere on the color gradient area to select a color, or use the hue slider to navigate through the color spectrum. As you move through the picker, the selected color preview updates in real-time along with all corresponding color codes. View your color in HEX format (like #FF5733), RGB format (255, 87, 51), and HSL format (14°, 100%, 60%) simultaneously. Each color code has a copy button for instant clipboard copying – just click and paste directly into your code or design software. If you already know a color code, you can enter it directly in any format, and the picker will display the color and convert it to other formats automatically. The large preview area helps you evaluate your color choice before using it in your project.",
+      keyFeatures: [
+        "Visual Color Selection – Intuitive picker with gradient and hue controls",
+        "Multiple Formats – Get HEX, RGB, and HSL codes simultaneously",
+        "One-Click Copy – Instantly copy any color code to your clipboard",
+        "Code Conversion – Enter any format and convert to all others",
+        "Large Preview – See your selected color in a generous preview area",
+        "Real-Time Updates – Color codes update as you adjust the picker",
+        "Designer Friendly – Perfect for web design, graphic design, and development",
+        "No Installation – Works directly in your browser without any software"
+      ]
+    }
   },
   "unit-converter": {
     title: "Free Unit Converter Online - Convert Length, Weight, Temperature",
@@ -179,7 +312,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "How accurate are the conversions?",
         answer: "All conversions use precise mathematical formulas and are accurate to multiple decimal places. Perfect for scientific, educational, and everyday use."
       }
-    ]
+    ],
+    article: {
+      introduction: "In our interconnected global world, the ability to convert between different measurement units is invaluable. Our free Unit Converter tool handles conversions across multiple categories including length, weight, temperature, speed, area, and volume. Whether you're traveling internationally, cooking with recipes from different countries, studying science, working on engineering projects, or simply curious about measurements, this tool provides instant, accurate conversions. The world uses two major measurement systems: the metric system (used by most countries) and the imperial system (primarily used in the United States). Converting between these systems often involves complex calculations that our tool handles instantly. Students, professionals, travelers, and home cooks all benefit from having a reliable unit converter at their fingertips.",
+      howToUse: "Converting units with our tool is quick and intuitive. Start by selecting the category of measurement you need – options include length, weight, temperature, speed, area, and volume. Once you've selected a category, choose your source unit from the dropdown menu (the unit you're converting from) and your target unit (the unit you're converting to). Enter the value you want to convert in the input field, and the result appears instantly. The converter displays results with appropriate precision for practical use. Want to convert in the opposite direction? Simply click the swap button to reverse the conversion. You can perform multiple conversions in sequence without refreshing the page. All calculations use precise mathematical formulas to ensure accuracy for both everyday use and professional applications.",
+      keyFeatures: [
+        "Multiple Categories – Length, weight, temperature, speed, area, volume, and more",
+        "Metric and Imperial – Convert between any measurement systems",
+        "Instant Results – Conversions appear immediately as you type",
+        "Swap Function – Quickly reverse conversion direction with one click",
+        "High Precision – Accurate calculations for professional and scientific use",
+        "Common Units – All frequently used units readily available",
+        "Easy Interface – Simple dropdowns and clear input fields",
+        "Educational – Great for learning about different measurement systems"
+      ]
+    }
   },
   "number-converter": {
     title: "Free Number System Converter - Binary, Decimal, Hex, Octal",
@@ -194,7 +341,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "What number systems are supported?",
         answer: "We support Binary (base 2), Octal (base 8), Decimal (base 10), and Hexadecimal (base 16). Convert between any of these systems instantly."
       }
-    ]
+    ],
+    article: {
+      introduction: "Understanding different number systems is fundamental to computer science, programming, and digital electronics. Our free Number System Converter instantly converts between binary, decimal, octal, and hexadecimal formats. Computers operate using binary (base 2), but humans typically think in decimal (base 10). Programmers frequently use hexadecimal (base 16) for its compact representation of binary data, while octal (base 8) appears in Unix file permissions and some legacy systems. Whether you're a computer science student learning about number representation, a programmer debugging low-level code, or an electronics enthusiast working with digital circuits, this tool makes conversions effortless. Manual conversion between number systems is tedious and error-prone, but our converter provides instant, accurate results every time.",
+      howToUse: "Our Number System Converter provides an intuitive interface for all your conversion needs. You'll see four input fields, one for each number system: decimal, binary, octal, and hexadecimal. Simply enter a number in any field, and all other fields instantly update with the equivalent values. For example, entering '255' in the decimal field immediately shows '11111111' in binary, '377' in octal, and 'FF' in hexadecimal. Each field validates input to ensure only valid characters for that base are accepted. The copy button next to each field allows you to quickly copy any converted value to your clipboard. A quick reference guide below the converter explains each number system for educational purposes. The converter handles both positive integers and provides real-time feedback as you type.",
+      keyFeatures: [
+        "Four Number Systems – Binary, Octal, Decimal, and Hexadecimal support",
+        "Bidirectional Conversion – Enter in any field, see results in all others",
+        "Real-Time Updates – Results appear instantly as you type",
+        "Input Validation – Only accepts valid characters for each base",
+        "Copy Functionality – One-click copying of any converted value",
+        "Educational Reference – Quick guide explaining each number system",
+        "Programmer Friendly – Perfect for development and debugging",
+        "Large Number Support – Handles numbers of significant size accurately"
+      ]
+    }
   },
   "text-on-photo": {
     title: "Free Text on Photo Online - Add Text to Images",
@@ -209,7 +370,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Can I add watermarks to protect my photos?",
         answer: "Yes! Add your name, logo, or copyright text as a watermark. You can adjust transparency and position to create professional watermarks."
       }
-    ]
+    ],
+    article: {
+      introduction: "Adding text to photos is essential for creating social media content, memes, marketing materials, watermarks, and personalized images. Our free Text on Photo tool provides a simple yet powerful way to overlay custom text on any image. Whether you're creating Instagram stories with captions, designing promotional graphics, adding copyright watermarks to protect your photography, making greeting cards, or crafting viral memes, this tool gives you complete control over your text styling. Professional photo editing software can be expensive and complex, but our tool offers the key features you need for text overlays in a clean, accessible interface. Create professional-looking images with custom text in minutes, not hours.",
+      howToUse: "Adding text to your photos is straightforward and fun. Begin by uploading your image – click the upload area or drag and drop your photo. Once loaded, your image appears in the editing canvas. Type your desired text in the text input field – it appears on your image in real-time. Customize your text using the available controls: adjust the font size using the slider to make text larger or smaller, choose your preferred text color using the color picker, and position your text precisely using the horizontal and vertical position sliders. Watch the live preview update as you make adjustments. Experiment with different combinations until you achieve the perfect look. When you're satisfied with your creation, enter a custom filename and click 'Download' to save your edited image. The reset button allows you to start over with a new image or text.",
+      keyFeatures: [
+        "Real-Time Preview – See text changes instantly on your image",
+        "Custom Positioning – Place text anywhere using precise controls",
+        "Font Size Control – Easily adjust text size with slider",
+        "Color Selection – Choose any text color with the color picker",
+        "Watermark Creation – Perfect for protecting your photography",
+        "Meme Maker – Create shareable memes with custom captions",
+        "High-Quality Export – Download images in original quality",
+        "No Account Needed – Start creating immediately without registration"
+      ]
+    }
   },
   "kb-converter": {
     title: "Free KB Converter - Reduce Image to Specific KB Size",
@@ -224,7 +399,21 @@ export const toolsSEO: Record<string, ToolSEO> = {
         question: "Why do I need to reduce image to specific KB?",
         answer: "Many official forms, job applications, and government websites have strict file size limits (often 50KB-200KB). Our tool helps you meet these requirements exactly."
       }
-    ]
+    ],
+    article: {
+      introduction: "Many official applications, government portals, and online forms require images to be within specific file size limits – often 50KB, 100KB, or 200KB. Our free KB Converter tool allows you to reduce any image to your exact target file size in kilobytes. Unlike generic compressors that simply reduce quality, our tool intelligently optimizes your image to meet the precise size requirement while preserving as much visual quality as possible. This is essential for passport photo uploads, job application portals, government document submissions, educational enrollment forms, and various online registrations. Manually adjusting compression settings to hit an exact file size is frustrating and time-consuming, but our tool automates this process completely. Simply specify your target size, and the tool handles the rest.",
+      howToUse: "Reducing your image to a specific KB size is effortless with our converter. Start by uploading your image – click the upload area or drag and drop your file. The tool displays your image preview along with its current file size. Next, enter your target file size in kilobytes in the input field. Common targets include 50KB for strict forms, 100KB for general applications, and 200KB for higher quality requirements. Click the 'Convert' button and the tool processes your image, using intelligent compression to reach your exact target size. The algorithm iteratively adjusts compression parameters to get as close to your target as possible while maximizing quality. Once processing completes, you'll see the new file size and can preview the result. If satisfied, enter a custom filename and download your perfectly sized image. The output maintains the original image dimensions while meeting your size requirement.",
+      keyFeatures: [
+        "Exact Size Targeting – Hit your specific KB requirement precisely",
+        "Smart Compression – Intelligent algorithm maximizes quality at target size",
+        "Common Presets – Quick access to popular size limits like 50KB, 100KB, 200KB",
+        "Size Preview – See current and target sizes before and after conversion",
+        "Quality Preservation – Maintains best possible quality at target size",
+        "All Formats – Works with JPG, PNG, WebP, and other common formats",
+        "Form Ready – Perfect for government, job, and educational applications",
+        "Instant Processing – Fast conversion happens right in your browser"
+      ]
+    }
   }
 };
 
