@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, LucideIcon, Heart } from "lucide-react";
+import { ArrowLeft, LucideIcon, Heart, BookOpen, ListChecks, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
-import { toolsSEO, getToolStructuredData } from "@/lib/seoData";
+import { toolsSEO, getToolStructuredData, ToolArticle } from "@/lib/seoData";
 import donateQr from "@/assets/donate-qr.png";
 
 interface ToolLayoutProps {
@@ -30,6 +30,48 @@ const DonateBanner = () => {
         <p className="text-sm text-muted-foreground mt-1">
           Support to keep this free & secure. Scan QR to donate via UPI.
         </p>
+      </div>
+    </div>
+  );
+};
+
+const ToolArticleSection = ({ article, toolName }: { article: ToolArticle; toolName: string }) => {
+  return (
+    <div className="glass-card rounded-2xl p-6 space-y-6">
+      <h2 className="text-xl font-bold flex items-center gap-2">
+        <BookOpen className="w-5 h-5 text-primary" />
+        About {toolName}
+      </h2>
+      
+      {/* Introduction */}
+      <div>
+        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-secondary" />
+          Introduction
+        </h3>
+        <p className="text-muted-foreground leading-relaxed">{article.introduction}</p>
+      </div>
+      
+      {/* How to Use */}
+      <div>
+        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+          <ListChecks className="w-4 h-4 text-secondary" />
+          How to Use
+        </h3>
+        <p className="text-muted-foreground leading-relaxed">{article.howToUse}</p>
+      </div>
+      
+      {/* Key Features */}
+      <div>
+        <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+        <ul className="grid gap-2">
+          {article.keyFeatures.map((feature, index) => (
+            <li key={index} className="flex items-start gap-2 text-muted-foreground">
+              <span className="text-primary mt-1">✓</span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -95,6 +137,11 @@ const ToolLayout = ({ title, description, icon: Icon, children, toolSlug }: Tool
 
             {/* Donate Banner */}
             <DonateBanner />
+
+            {/* SEO Article Section */}
+            {seoData?.article && (
+              <ToolArticleSection article={seoData.article} toolName={title} />
+            )}
           </article>
         </div>
       </div>
