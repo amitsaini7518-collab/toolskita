@@ -133,6 +133,7 @@ const RemoveBackground = () => {
       title="Remove Background"
       description="Remove image background using AI and add custom background colors"
       icon={ImageMinus}
+      toolSlug="remove-background"
     >
       <div className="space-y-6">
         {!originalImage ? (

@@ -102,6 +102,7 @@ const ImageCompressor = () => {
       title="Image Compressor"
       description="Reduce image file size while maintaining quality"
       icon={FileDown}
+      toolSlug="image-compressor"
     >
       {!image ? (
         <label className="flex flex-col items-center justify-center h-64 border-2 border-dashed border-border rounded-xl cursor-pointer hover:border-primary transition-colors">

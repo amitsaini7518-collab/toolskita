@@ -69,6 +69,7 @@ const AgeCalculator = () => {
       title="Age Calculator"
       description="Calculate your exact age from birthdate"
       icon={Calendar}
+      toolSlug="age-calculator"
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-4">

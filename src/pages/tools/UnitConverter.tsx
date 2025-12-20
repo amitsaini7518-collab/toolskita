@@ -147,6 +147,7 @@ const UnitConverter = () => {
       title="Unit Converter"
       description="Convert between different units"
       icon={Ruler}
+      toolSlug="unit-converter"
     >
       <div className="space-y-6">
         {/* Category Selection */}

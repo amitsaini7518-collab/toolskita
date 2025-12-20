@@ -81,7 +81,10 @@ const ToolLayout = ({ title, description, icon: Icon, children, toolSlug }: Tool
   // Get SEO data for this tool
   const slug = toolSlug || title.toLowerCase().replace(/\s+/g, "-");
   const seoData = toolsSEO[slug];
-  const structuredData = getToolStructuredData(slug, title, description);
+  const structuredData = getToolStructuredData(slug, seoData?.h1Title || title, seoData?.description || description);
+  
+  // Use SEO-optimized H1 title if available
+  const h1Title = seoData?.h1Title || title;
 
   return (
     <>
@@ -117,8 +120,8 @@ const ToolLayout = ({ title, description, icon: Icon, children, toolSlug }: Tool
                   <Icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <div>
-                  <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
-                  <p className="text-muted-foreground">{description}</p>
+                  <h1 className="text-2xl md:text-3xl font-bold">{h1Title}</h1>
+                  <p className="text-muted-foreground">{seoData?.description || description}</p>
                 </div>
               </div>
             </header>

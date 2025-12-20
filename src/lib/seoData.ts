@@ -7,6 +7,7 @@ export interface ToolArticle {
 
 export interface ToolSEO {
   title: string;
+  h1Title: string;
   description: string;
   keywords: string;
   faqs: { question: string; answer: string }[];
@@ -16,6 +17,7 @@ export interface ToolSEO {
 export const toolsSEO: Record<string, ToolSEO> = {
   "image-compressor": {
     title: "Free Image Compressor Online - Reduce Image Size in KB/MB",
+    h1Title: "Free Image Compressor - Reduce Size Without Quality Loss",
     description: "Compress images online for free. Reduce image file size in KB or MB without losing quality. Best free image compressor tool - no signup required, fast & secure.",
     keywords: "image compressor, compress image online, reduce image size, image size reducer, compress jpg, compress png, free image compressor, online image compressor",
     faqs: [
@@ -53,6 +55,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "image-cropper": {
     title: "Free Image Cropper Online - Crop Photos Instantly",
+    h1Title: "Free Online Image Cropper - Crop Photos for Any Size",
     description: "Crop images online for free. Easy to use image cropper with custom aspect ratios. Crop photos for social media, passport, ID cards. No signup, instant results.",
     keywords: "image cropper, crop image online, photo cropper, crop photo, free image crop, resize image, aspect ratio cropper, passport photo crop",
     faqs: [
@@ -86,6 +89,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "remove-background": {
     title: "Free Background Remover Online - Remove Image Background AI",
+    h1Title: "AI Background Remover - Remove Image Background Free",
     description: "Remove background from images instantly with AI. Free online background remover - no signup needed. Perfect for product photos, portraits, logos. 100% automatic.",
     keywords: "remove background, background remover, remove bg, transparent background, background eraser, remove image background, ai background remover, free background remover",
     faqs: [
@@ -119,6 +123,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "image-to-pdf": {
     title: "Free Image to PDF Converter Online - Convert JPG to PDF",
+    h1Title: "Convert Images to PDF Free - JPG, PNG to PDF Converter",
     description: "Convert images to PDF online for free. Merge multiple images into one PDF. Convert JPG, PNG, WebP to PDF instantly. No signup, no watermark, free forever.",
     keywords: "image to pdf, jpg to pdf, convert image to pdf, png to pdf, photo to pdf, picture to pdf, free pdf converter, multiple images to pdf",
     faqs: [
@@ -152,6 +157,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "pdf-to-image": {
     title: "Free PDF to Image Converter Online - Convert PDF to JPG/PNG",
+    h1Title: "PDF to Image Converter Free - Extract PDF Pages as JPG/PNG",
     description: "Convert PDF to images online for free. Extract all pages from PDF as JPG or PNG images. High quality conversion, no signup required, instant download.",
     keywords: "pdf to image, pdf to jpg, pdf to png, convert pdf to image, extract images from pdf, pdf converter, free pdf to image",
     faqs: [
@@ -181,6 +187,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "qr-generator": {
     title: "Free QR Code Generator Online - Create QR Codes Instantly",
+    h1Title: "Free QR Code Generator - Create Custom QR Codes Online",
     description: "Generate QR codes for free online. Create QR codes for URLs, text, WiFi, vCards. Customize colors and size. Download as PNG. No signup, instant creation.",
     keywords: "qr code generator, create qr code, qr code maker, free qr generator, qr code creator, url to qr, text to qr, wifi qr code",
     faqs: [
@@ -214,6 +221,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "age-calculator": {
     title: "Free Age Calculator Online - Calculate Exact Age from Birthdate",
+    h1Title: "Age Calculator - Calculate Exact Age from Date of Birth",
     description: "Calculate your exact age in years, months, days, hours, and minutes. Free online age calculator from date of birth. Find out how old you are precisely.",
     keywords: "age calculator, calculate age, age from date of birth, how old am i, birthday calculator, exact age calculator, age in days, age finder",
     faqs: [
@@ -243,6 +251,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "bmi-calculator": {
     title: "Free BMI Calculator Online - Calculate Body Mass Index",
+    h1Title: "BMI Calculator - Check Your Body Mass Index Free",
     description: "Calculate your BMI (Body Mass Index) for free. Enter height and weight to get your BMI score and health category. Supports metric and imperial units.",
     keywords: "bmi calculator, body mass index, calculate bmi, bmi check, weight calculator, health calculator, bmi score, obesity calculator",
     faqs: [
@@ -272,6 +281,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "color-picker": {
     title: "Free Color Picker Online - Get HEX, RGB, HSL Color Codes",
+    h1Title: "Color Picker Tool - Get HEX, RGB, HSL Codes Free",
     description: "Pick colors and get color codes instantly. Free online color picker tool. Get HEX, RGB, HSL values. Perfect for designers and developers. No signup needed.",
     keywords: "color picker, hex color, rgb color, color code, color selector, html color codes, css colors, color converter, hsl color",
     faqs: [
@@ -301,6 +311,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "unit-converter": {
     title: "Free Unit Converter Online - Convert Length, Weight, Temperature",
+    h1Title: "Unit Converter - Convert Length, Weight, Temperature Free",
     description: "Convert units online for free. Length, weight, temperature, speed, and more. Easy to use unit converter with instant results. All conversions in one place.",
     keywords: "unit converter, convert units, length converter, weight converter, temperature converter, metric converter, imperial converter, measurement converter",
     faqs: [
@@ -330,6 +341,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "number-converter": {
     title: "Free Number System Converter - Binary, Decimal, Hex, Octal",
+    h1Title: "Number System Converter - Binary, Decimal, Hex, Octal Free",
     description: "Convert between number systems online for free. Binary, decimal, hexadecimal, octal conversions. Perfect for programmers and students. Instant results.",
     keywords: "number converter, binary converter, hex converter, decimal to binary, binary to decimal, octal converter, number system, base converter",
     faqs: [
@@ -359,6 +371,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "text-on-photo": {
     title: "Free Text on Photo Online - Add Text to Images",
+    h1Title: "Add Text to Photo Free - Create Watermarks & Captions",
     description: "Add text to photos online for free. Create watermarks, captions, memes. Customize font, color, size. Free image text editor - no signup, instant download.",
     keywords: "add text to photo, text on image, photo text editor, watermark image, caption maker, meme text, image text overlay, photo caption",
     faqs: [
@@ -388,6 +401,7 @@ export const toolsSEO: Record<string, ToolSEO> = {
   },
   "kb-converter": {
     title: "Free KB Converter - Reduce Image to Specific KB Size",
+    h1Title: "KB Converter - Reduce Image to Exact KB Size Free",
     description: "Reduce image to exact KB size online for free. Convert image to 50KB, 100KB, 200KB or any size. Perfect for document uploads. No quality loss.",
     keywords: "kb converter, reduce image size kb, image to kb, compress to specific size, 100kb image, 50kb photo, resize image kb, passport photo kb",
     faqs: [

@@ -91,6 +91,7 @@ const ImageToPDF = () => {
       title="Image to PDF"
       description="Convert images to PDF documents instantly"
       icon={FileImage}
+      toolSlug="image-to-pdf"
     >
       <div className="space-y-6">
         {/* Upload Area */}

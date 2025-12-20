@@ -104,6 +104,7 @@ const NumberConverter = () => {
       title="Number System Converter"
       description="Convert between decimal, binary, octal, and hexadecimal"
       icon={Hash}
+      toolSlug="number-converter"
     >
       <div className="space-y-6">
         <p className="text-muted-foreground">
