@@ -116,6 +116,7 @@ const PDFToImage = () => {
       title="PDF to Image"
       description="Convert PDF pages to high-quality images"
       icon={FileText}
+      toolSlug="pdf-to-image"
     >
       <div className="space-y-6">
         {images.length === 0 ? (

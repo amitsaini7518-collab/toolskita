@@ -79,6 +79,7 @@ const ColorPicker = () => {
       title="Color Picker"
       description="Pick colors and get color codes"
       icon={Palette}
+      toolSlug="color-picker"
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-6">

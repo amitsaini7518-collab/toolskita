@@ -150,6 +150,7 @@ const KBConverter = () => {
       title="KB Converter"
       description="Reduce image size to specific KB without losing quality"
       icon={FileDown}
+      toolSlug="kb-converter"
     >
       <canvas ref={canvasRef} className="hidden" />
       

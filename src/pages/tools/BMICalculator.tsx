@@ -50,6 +50,7 @@ const BMICalculator = () => {
       title="BMI Calculator"
       description="Calculate your Body Mass Index"
       icon={Calculator}
+      toolSlug="bmi-calculator"
     >
       <div className="space-y-6">
         <div className="grid md:grid-cols-2 gap-4">

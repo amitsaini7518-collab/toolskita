@@ -79,6 +79,7 @@ const QRGenerator = () => {
       title="QR Code Generator"
       description="Create QR codes for any text or URL"
       icon={QrCode}
+      toolSlug="qr-generator"
     >
       <div className="space-y-6">
         <div className="space-y-2">
