@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 
 const KBConverter = () => {
   const [originalImage, setOriginalImage] = useState<string | null>(null);
@@ -14,6 +15,7 @@ const KBConverter = () => {
   const [targetSize, setTargetSize] = useState<number>(100);
   const [isProcessing, setIsProcessing] = useState(false);
   const [fileName, setFileName] = useState("converted-image");
+  const [showAdModal, setShowAdModal] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { toast } = useToast();
 
@@ -127,7 +129,13 @@ const KBConverter = () => {
     }
   };
 
-  const handleDownload = () => {
+  const handleDownloadClick = () => {
+    if (convertedImage) {
+      setShowAdModal(true);
+    }
+  };
+
+  const handleActualDownload = () => {
     if (convertedImage) {
       const a = document.createElement("a");
       a.href = convertedImage;
@@ -258,7 +266,7 @@ const KBConverter = () => {
                 )}
               </Button>
             ) : (
-              <Button onClick={handleDownload} className="flex-1">
+              <Button onClick={handleDownloadClick} className="flex-1">
                 <Download className="w-4 h-4 mr-2" />
                 Download
               </Button>
@@ -270,6 +278,14 @@ const KBConverter = () => {
           </div>
         </div>
       )}
+
+      {/* Ad Download Modal */}
+      <AdDownloadModal
+        isOpen={showAdModal}
+        onClose={() => setShowAdModal(false)}
+        onDownload={handleActualDownload}
+        fileName={`${fileName}.jpg`}
+      />
     </ToolLayout>
   );
 };

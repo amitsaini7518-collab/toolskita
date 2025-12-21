@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
-import AdBanner from "@/components/AdBanner";
 import { toolsSEO, getToolStructuredData, ToolArticle } from "@/lib/seoData";
 import donateQr from "@/assets/donate-qr.png";
 
@@ -182,20 +181,10 @@ const ToolLayout = ({ title, description, icon: Icon, children, toolSlug }: Tool
               </div>
             </header>
 
-            {/* Ad Before Tool */}
-            <div className="rounded-xl overflow-hidden">
-              <AdBanner slot="1234567890" format="horizontal" />
-            </div>
-
             {/* Tool Content */}
             <section className="glass-card rounded-2xl p-6">
               {children}
             </section>
-
-            {/* Ad After Tool */}
-            <div className="rounded-xl overflow-hidden">
-              <AdBanner slot="0987654321" format="rectangle" />
-            </div>
 
             {/* Donate Banner */}
             <DonateBanner />
@@ -207,10 +196,6 @@ const ToolLayout = ({ title, description, icon: Icon, children, toolSlug }: Tool
               </section>
             )}
 
-            {/* Ad After FAQ */}
-            <div className="rounded-xl overflow-hidden">
-              <AdBanner slot="1122334455" format="auto" />
-            </div>
 
             {/* SEO Article Section */}
             {seoData?.article && (
