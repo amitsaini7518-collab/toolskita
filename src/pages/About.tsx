@@ -1,15 +1,13 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Users, Zap, Shield, Heart } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main className="container py-12">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold gradient-text mb-6">About AllTool.tech</h1>
+          <h1 className="text-4xl font-bold gradient-text mb-6">About Toolskit.tech</h1>
           
           <div className="glass-card rounded-2xl p-8 mb-8">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -68,8 +66,6 @@ const About = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
