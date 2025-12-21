@@ -36,41 +36,96 @@ const DonateBanner = () => {
 };
 
 const ToolArticleSection = ({ article, toolName }: { article: ToolArticle; toolName: string }) => {
+  // Parse howToUse into numbered steps
+  const howToUseSteps = article.howToUse
+    .split(/(?:First,|Second,|Next,|Then,|After|Finally,|Once|Begin by|Start by)/gi)
+    .filter(step => step.trim().length > 20)
+    .map(step => step.trim().replace(/^[,.\s]+/, '').replace(/[.]\s*$/, ''));
+
   return (
-    <div className="glass-card rounded-2xl p-6 space-y-6">
-      <h2 className="text-xl font-bold flex items-center gap-2">
-        <BookOpen className="w-5 h-5 text-primary" />
-        About {toolName}
-      </h2>
-      
-      {/* Introduction */}
-      <div>
-        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-secondary" />
-          Introduction
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">{article.introduction}</p>
+    <div className="glass-card rounded-2xl p-6 space-y-8">
+      {/* Section Header - Like Government Forms */}
+      <div className="border-b-2 border-primary pb-4">
+        <h2 className="text-xl md:text-2xl font-bold text-foreground flex items-center gap-3">
+          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg">
+            i
+          </div>
+          Complete Guide: {toolName}
+        </h2>
+        <p className="text-sm text-muted-foreground mt-2">Read the instructions carefully before using this tool</p>
       </div>
       
-      {/* How to Use */}
-      <div>
-        <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-          <ListChecks className="w-4 h-4 text-secondary" />
-          How to Use
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">{article.howToUse}</p>
+      {/* Section 1: Introduction */}
+      <div className="border border-border rounded-lg overflow-hidden">
+        <div className="bg-muted/50 px-4 py-3 border-b border-border">
+          <h3 className="font-bold text-foreground flex items-center gap-3">
+            <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">1</span>
+            परिचय / Introduction
+          </h3>
+        </div>
+        <div className="p-4">
+          <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{article.introduction}</p>
+        </div>
       </div>
       
-      {/* Key Features */}
-      <div>
-        <h3 className="text-lg font-semibold mb-3">Key Features</h3>
-        <ul className="grid gap-2">
-          {article.keyFeatures.map((feature, index) => (
-            <li key={index} className="flex items-start gap-2 text-muted-foreground">
-              <span className="text-primary mt-1">✓</span>
-              <span>{feature}</span>
-            </li>
-          ))}
+      {/* Section 2: How to Use - Step by Step */}
+      <div className="border border-border rounded-lg overflow-hidden">
+        <div className="bg-muted/50 px-4 py-3 border-b border-border">
+          <h3 className="font-bold text-foreground flex items-center gap-3">
+            <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">2</span>
+            उपयोग कैसे करें / How to Use
+          </h3>
+        </div>
+        <div className="p-4">
+          {howToUseSteps.length > 1 ? (
+            <ol className="space-y-3">
+              {howToUseSteps.map((step, index) => (
+                <li key={index} className="flex gap-3 text-sm md:text-base">
+                  <span className="shrink-0 w-6 h-6 rounded bg-secondary/20 text-secondary-foreground flex items-center justify-center text-xs font-semibold">
+                    {index + 1}
+                  </span>
+                  <span className="text-muted-foreground leading-relaxed">{step}.</span>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{article.howToUse}</p>
+          )}
+        </div>
+      </div>
+      
+      {/* Section 3: Key Features */}
+      <div className="border border-border rounded-lg overflow-hidden">
+        <div className="bg-muted/50 px-4 py-3 border-b border-border">
+          <h3 className="font-bold text-foreground flex items-center gap-3">
+            <span className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">3</span>
+            मुख्य विशेषताएं / Key Features
+          </h3>
+        </div>
+        <div className="p-4">
+          <div className="grid gap-2">
+            {article.keyFeatures.map((feature, index) => (
+              <div key={index} className="flex items-start gap-3 p-2 rounded-lg hover:bg-muted/30 transition-colors">
+                <span className="shrink-0 w-5 h-5 rounded bg-green-500/20 text-green-600 dark:text-green-400 flex items-center justify-center text-xs font-bold">
+                  ✓
+                </span>
+                <span className="text-muted-foreground text-sm md:text-base">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Important Notice - Like Government Forms */}
+      <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+        <h4 className="font-semibold text-yellow-700 dark:text-yellow-400 flex items-center gap-2 mb-2">
+          <span>⚠️</span> महत्वपूर्ण सूचना / Important Notice
+        </h4>
+        <ul className="text-sm text-muted-foreground space-y-1">
+          <li>• यह टूल 100% मुफ्त है और कोई पंजीकरण आवश्यक नहीं है।</li>
+          <li>• This tool is 100% free and no registration is required.</li>
+          <li>• आपकी फाइलें आपके ब्राउज़र में प्रोसेस होती हैं, कोई डेटा अपलोड नहीं होता।</li>
+          <li>• Your files are processed in your browser, no data is uploaded.</li>
         </ul>
       </div>
     </div>
