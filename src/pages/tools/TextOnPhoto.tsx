@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 
 const TextOnPhoto = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -15,6 +16,7 @@ const TextOnPhoto = () => {
   const [textX, setTextX] = useState([50]);
   const [textY, setTextY] = useState([50]);
   const [fileName, setFileName] = useState("text-on-photo");
+  const [showAdModal, setShowAdModal] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
 
@@ -69,7 +71,12 @@ const TextOnPhoto = () => {
 
   // Redraw when settings change
   // Note: updateSettings() handles redrawing via setTimeout
-  const handleDownload = () => {
+  const handleDownloadClick = () => {
+    if (!canvasRef.current) return;
+    setShowAdModal(true);
+  };
+
+  const handleActualDownload = () => {
     if (!canvasRef.current) return;
     drawCanvas();
     
@@ -200,7 +207,7 @@ const TextOnPhoto = () => {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Button variant="gradient" onClick={handleDownload}>
+            <Button variant="gradient" onClick={handleDownloadClick}>
               <Download className="w-4 h-4 mr-2" />
               Download Image
             </Button>
@@ -211,6 +218,14 @@ const TextOnPhoto = () => {
           </div>
         </div>
       )}
+
+      {/* Ad Download Modal */}
+      <AdDownloadModal
+        isOpen={showAdModal}
+        onClose={() => setShowAdModal(false)}
+        onDownload={handleActualDownload}
+        fileName={`${fileName}.png`}
+      />
     </ToolLayout>
   );
 };
