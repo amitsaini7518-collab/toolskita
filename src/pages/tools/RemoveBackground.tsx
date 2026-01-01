@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import ToolLayout from "@/components/tools/ToolLayout";
 import { toast } from "sonner";
 import { removeBackground, loadImage, applyBackgroundColor } from "@/lib/removeBackground";
+import { AdDownloadModal } from "@/components/AdDownloadModal";
 
 const PRESET_COLORS = [
   { name: "Transparent", value: "transparent" },
@@ -32,6 +33,7 @@ const RemoveBackground = () => {
   const [customColor, setCustomColor] = useState("#FFFFFF");
   const [progress, setProgress] = useState("");
   const [fileName, setFileName] = useState("removed-background");
+  const [showAdModal, setShowAdModal] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,7 +104,13 @@ const RemoveBackground = () => {
     }
   };
 
-  const handleDownload = async () => {
+  const handleDownloadClick = () => {
+    if (processedImage) {
+      setShowAdModal(true);
+    }
+  };
+
+  const handleActualDownload = async () => {
     if (!processedImage) return;
     
     const response = await fetch(processedImage);
@@ -293,7 +301,7 @@ const RemoveBackground = () => {
               )}
               
               {processedImage && (
-                <Button variant="gradient" onClick={handleDownload}>
+                <Button variant="gradient" onClick={handleDownloadClick}>
                   <Download className="w-4 h-4 mr-2" />
                   Download PNG
                 </Button>
@@ -317,6 +325,14 @@ const RemoveBackground = () => {
           </ul>
         </div>
       </div>
+
+      {/* Ad Download Modal */}
+      <AdDownloadModal
+        isOpen={showAdModal}
+        onClose={() => setShowAdModal(false)}
+        onDownload={handleActualDownload}
+        fileName={`${fileName}.png`}
+      />
     </ToolLayout>
   );
 };
