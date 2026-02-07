@@ -14,6 +14,7 @@ import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import AllTools from "./pages/AllTools";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 // Tool Pages
 import ImageCropper from "./pages/tools/ImageCropper";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/tools" element={<AllTools />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           
           {/* Tool Routes */}
           <Route path="/tools/image-cropper" element={<ImageCropper />} />
