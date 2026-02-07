@@ -7,6 +7,3 @@ pages_build_output_dir = "dist"
 NODE_VERSION = "22"
 BUN_VERSION = "0"
 NPM_FLAGS = "--version"
-
-[build]
-command = "npm install && npm run build"
