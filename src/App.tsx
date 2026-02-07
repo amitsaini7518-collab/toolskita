@@ -13,6 +13,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import AllTools from "./pages/AllTools";
+import Blog from "./pages/Blog";
 
 // Tool Pages
 import ImageCropper from "./pages/tools/ImageCropper";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/tools" element={<AllTools />} />
+          <Route path="/blog" element={<Blog />} />
           
           {/* Tool Routes */}
           <Route path="/tools/image-cropper" element={<ImageCropper />} />
