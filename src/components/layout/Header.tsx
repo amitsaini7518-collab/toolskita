@@ -23,6 +23,9 @@ const Header = () => {
           <Link to="/tools" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             All Tools
           </Link>
+          <Link to="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Blog
+          </Link>
           <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             About
           </Link>
@@ -61,6 +64,13 @@ const Header = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               All Tools
+            </Link>
+            <Link 
+              to="/blog" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link 
               to="/about" 
