@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 7,
+    slug: "top-5-pdf-tools-for-students",
+    title: "Top 5 PDF Tools for Students: Ultimate Guide for 2025",
+    excerpt: "Discover the best free PDF tools every student needs. From converting PDFs to images to creating PDFs from photos - complete guide with rankings and tips.",
+    category: "PDF Tools",
+    date: "2025-01-15",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop"
+  },
+  {
     id: 1,
     slug: "how-to-compress-images-without-losing-quality",
     title: "How to Compress Images Without Losing Quality in 2024",
