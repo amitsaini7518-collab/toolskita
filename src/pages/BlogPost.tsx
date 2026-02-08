@@ -1464,25 +1464,84 @@ const BlogPost = () => {
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
             {post.content.split('\n').map((paragraph, index) => {
+              // Helper function to parse markdown links and bold text
+              const parseInlineFormatting = (text: string) => {
+                const parts: React.ReactNode[] = [];
+                let remaining = text;
+                let keyIndex = 0;
+                
+                while (remaining.length > 0) {
+                  // Check for markdown links [text](url)
+                  const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
+                  // Check for bold text **text**
+                  const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
+                  
+                  if (linkMatch && (!boldMatch || remaining.indexOf(linkMatch[0]) < remaining.indexOf(boldMatch[0]))) {
+                    const beforeLink = remaining.substring(0, remaining.indexOf(linkMatch[0]));
+                    if (beforeLink) {
+                      parts.push(<span key={`text-${index}-${keyIndex++}`}>{beforeLink}</span>);
+                    }
+                    const linkUrl = linkMatch[2];
+                    const isExternal = linkUrl.startsWith('http');
+                    if (isExternal) {
+                      parts.push(
+                        <a 
+                          key={`link-${index}-${keyIndex++}`}
+                          href={linkUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline font-medium"
+                        >
+                          {linkMatch[1]}
+                        </a>
+                      );
+                    } else {
+                      parts.push(
+                        <Link 
+                          key={`link-${index}-${keyIndex++}`}
+                          to={linkUrl}
+                          className="text-primary hover:underline font-medium"
+                        >
+                          {linkMatch[1]}
+                        </Link>
+                      );
+                    }
+                    remaining = remaining.substring(remaining.indexOf(linkMatch[0]) + linkMatch[0].length);
+                  } else if (boldMatch) {
+                    const beforeBold = remaining.substring(0, remaining.indexOf(boldMatch[0]));
+                    if (beforeBold) {
+                      parts.push(<span key={`text-${index}-${keyIndex++}`}>{beforeBold}</span>);
+                    }
+                    parts.push(<strong key={`bold-${index}-${keyIndex++}`}>{boldMatch[1]}</strong>);
+                    remaining = remaining.substring(remaining.indexOf(boldMatch[0]) + boldMatch[0].length);
+                  } else {
+                    parts.push(<span key={`text-${index}-${keyIndex++}`}>{remaining}</span>);
+                    break;
+                  }
+                }
+                
+                return parts;
+              };
+
               if (paragraph.startsWith('## ')) {
                 return <h2 key={index} className="text-2xl font-bold mt-8 mb-4">{paragraph.replace('## ', '')}</h2>;
               }
               if (paragraph.startsWith('### ')) {
                 return <h3 key={index} className="text-xl font-semibold mt-6 mb-3">{paragraph.replace('### ', '')}</h3>;
               }
-              if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+              if (paragraph.startsWith('**') && paragraph.endsWith('**') && !paragraph.includes('[')) {
                 return <p key={index} className="font-semibold my-2">{paragraph.replace(/\*\*/g, '')}</p>;
               }
               if (paragraph.startsWith('- ')) {
-                return <li key={index} className="ml-4">{paragraph.replace('- ', '')}</li>;
+                return <li key={index} className="ml-4">{parseInlineFormatting(paragraph.replace('- ', ''))}</li>;
               }
               if (paragraph.startsWith('| ')) {
                 return null; // Skip table formatting for now
               }
-              if (paragraph.trim() === '') {
+              if (paragraph.trim() === '' || paragraph.trim() === '---') {
                 return null;
               }
-              return <p key={index} className="my-4 text-muted-foreground leading-relaxed">{paragraph}</p>;
+              return <p key={index} className="my-4 text-muted-foreground leading-relaxed">{parseInlineFormatting(paragraph)}</p>;
             })}
           </div>
 
