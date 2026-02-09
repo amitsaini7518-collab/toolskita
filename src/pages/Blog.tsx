@@ -8,6 +8,26 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 8,
+    slug: "best-image-tools-for-social-media",
+    title: "Best Image Tools for Social Media: Create Stunning Posts in 2025",
+    excerpt: "Master social media visuals with these free image tools. Learn to crop, compress, add text, and remove backgrounds for Instagram, Facebook, and more.",
+    category: "Image Tools",
+    date: "2025-02-01",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop"
+  },
+  {
+    id: 9,
+    slug: "essential-calculators-for-daily-life",
+    title: "Essential Online Calculators for Daily Life: Complete Guide 2025",
+    excerpt: "From BMI to age calculations, discover the most useful free online calculators that simplify your everyday tasks and health tracking.",
+    category: "Calculator Tools",
+    date: "2025-01-25",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"
+  },
+  {
     id: 7,
     slug: "top-5-pdf-tools-for-students",
     title: "Top 5 PDF Tools for Students: Ultimate Guide for 2025",
