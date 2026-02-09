@@ -1465,58 +1465,79 @@ const BlogPost = () => {
           <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
             {post.content.split('\n').map((paragraph, index) => {
               // Helper function to parse markdown links and bold text
-              const parseInlineFormatting = (text: string) => {
+              const parseInlineFormatting = (text: string): React.ReactNode[] => {
                 const parts: React.ReactNode[] = [];
                 let remaining = text;
                 let keyIndex = 0;
                 
+                // Helper to create link component
+                const createLink = (linkText: string, linkUrl: string, isBold: boolean = false) => {
+                  const isExternal = linkUrl.startsWith('http');
+                  const content = isBold ? <strong>{linkText}</strong> : linkText;
+                  
+                  if (isExternal) {
+                    return (
+                      <a 
+                        key={`link-${index}-${keyIndex++}`}
+                        href={linkUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-medium"
+                      >
+                        {content}
+                      </a>
+                    );
+                  } else {
+                    return (
+                      <Link 
+                        key={`link-${index}-${keyIndex++}`}
+                        to={linkUrl}
+                        className="text-primary hover:underline font-medium"
+                      >
+                        {content}
+                      </Link>
+                    );
+                  }
+                };
+                
                 while (remaining.length > 0) {
+                  // Check for bold link **[text](url)**
+                  const boldLinkMatch = remaining.match(/\*\*\[([^\]]+)\]\(([^)]+)\)\*\*/);
                   // Check for markdown links [text](url)
                   const linkMatch = remaining.match(/\[([^\]]+)\]\(([^)]+)\)/);
-                  // Check for bold text **text**
-                  const boldMatch = remaining.match(/\*\*([^*]+)\*\*/);
+                  // Check for bold text **text** (but not containing links)
+                  const boldMatch = remaining.match(/\*\*([^*\[\]]+)\*\*/);
                   
-                  if (linkMatch && (!boldMatch || remaining.indexOf(linkMatch[0]) < remaining.indexOf(boldMatch[0]))) {
-                    const beforeLink = remaining.substring(0, remaining.indexOf(linkMatch[0]));
-                    if (beforeLink) {
-                      parts.push(<span key={`text-${index}-${keyIndex++}`}>{beforeLink}</span>);
-                    }
-                    const linkUrl = linkMatch[2];
-                    const isExternal = linkUrl.startsWith('http');
-                    if (isExternal) {
-                      parts.push(
-                        <a 
-                          key={`link-${index}-${keyIndex++}`}
-                          href={linkUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline font-medium"
-                        >
-                          {linkMatch[1]}
-                        </a>
-                      );
-                    } else {
-                      parts.push(
-                        <Link 
-                          key={`link-${index}-${keyIndex++}`}
-                          to={linkUrl}
-                          className="text-primary hover:underline font-medium"
-                        >
-                          {linkMatch[1]}
-                        </Link>
-                      );
-                    }
-                    remaining = remaining.substring(remaining.indexOf(linkMatch[0]) + linkMatch[0].length);
-                  } else if (boldMatch) {
-                    const beforeBold = remaining.substring(0, remaining.indexOf(boldMatch[0]));
-                    if (beforeBold) {
-                      parts.push(<span key={`text-${index}-${keyIndex++}`}>{beforeBold}</span>);
-                    }
-                    parts.push(<strong key={`bold-${index}-${keyIndex++}`}>{boldMatch[1]}</strong>);
-                    remaining = remaining.substring(remaining.indexOf(boldMatch[0]) + boldMatch[0].length);
-                  } else {
+                  // Find which pattern comes first
+                  const boldLinkIndex = boldLinkMatch ? remaining.indexOf(boldLinkMatch[0]) : Infinity;
+                  const linkIndex = linkMatch ? remaining.indexOf(linkMatch[0]) : Infinity;
+                  const boldIndex = boldMatch ? remaining.indexOf(boldMatch[0]) : Infinity;
+                  
+                  const minIndex = Math.min(boldLinkIndex, linkIndex, boldIndex);
+                  
+                  if (minIndex === Infinity) {
+                    // No more patterns found
                     parts.push(<span key={`text-${index}-${keyIndex++}`}>{remaining}</span>);
                     break;
+                  }
+                  
+                  // Add text before the match
+                  if (minIndex > 0) {
+                    parts.push(<span key={`text-${index}-${keyIndex++}`}>{remaining.substring(0, minIndex)}</span>);
+                  }
+                  
+                  if (minIndex === boldLinkIndex && boldLinkMatch) {
+                    // Bold link: **[text](url)**
+                    parts.push(createLink(boldLinkMatch[1], boldLinkMatch[2], true));
+                    remaining = remaining.substring(minIndex + boldLinkMatch[0].length);
+                  } else if (minIndex === linkIndex && linkMatch) {
+                    // Regular link: [text](url)
+                    parts.push(createLink(linkMatch[1], linkMatch[2], false));
+                    remaining = remaining.substring(minIndex + linkMatch[0].length);
+                  } else if (minIndex === boldIndex && boldMatch) {
+                    // Bold text: **text**
+                    parts.push(<strong key={`bold-${index}-${keyIndex++}`}>{boldMatch[1]}</strong>);
+                    remaining = remaining.substring(minIndex + boldMatch[0].length);
                   }
                 }
                 
