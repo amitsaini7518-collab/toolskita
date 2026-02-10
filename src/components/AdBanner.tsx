@@ -12,18 +12,22 @@ const AdBanner = ({ slot, format = "auto", responsive = true, className = "" }: 
   const isLoaded = useRef(false);
 
   useEffect(() => {
-    // Only run once per component instance
     if (isLoaded.current) return;
     
-    try {
-      const adsbygoogle = (window as any).adsbygoogle;
-      if (adsbygoogle && adRef.current) {
-        adsbygoogle.push({});
-        isLoaded.current = true;
+    // Wait for container to have width before pushing ad
+    const timer = setTimeout(() => {
+      try {
+        const adsbygoogle = (window as any).adsbygoogle;
+        if (adsbygoogle && adRef.current && adRef.current.offsetWidth > 0) {
+          adsbygoogle.push({});
+          isLoaded.current = true;
+        }
+      } catch (error) {
+        console.error("AdSense error:", error);
       }
-    } catch (error) {
-      console.error("AdSense error:", error);
-    }
+    }, 500);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   return (
