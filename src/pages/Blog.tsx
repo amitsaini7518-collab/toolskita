@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 10,
+    slug: "ssc-form-photo-size-compressor",
+    title: "SSC Form Photo Size Compressor – SSC फॉर्म के लिए फोटो साइज कैसे कम करें (2025 गाइड)",
+    excerpt: "SSC CGL, CHSL, MTS फॉर्म भरते समय फोटो साइज की समस्या? जानिए कैसे फ्री में फोटो को सही KB साइज में कंप्रेस करें बिना क्वालिटी खोए।",
+    category: "Image Tools",
+    date: "2025-02-10",
+    readTime: "15 min read",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop"
+  },
+  {
     id: 8,
     slug: "best-image-tools-for-social-media",
     title: "Best Image Tools for Social Media: Create Stunning Posts in 2025",
