@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Type, Upload, Download, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -31,7 +31,6 @@ const TextOnPhoto = () => {
         img.onload = () => {
           imageRef.current = img;
           setImage(e.target?.result as string);
-          drawCanvas();
         };
         img.src = e.target?.result as string;
       };
@@ -69,8 +68,12 @@ const TextOnPhoto = () => {
     ctx.fillText(text, x, y);
   };
 
-  // Redraw when settings change
-  // Note: updateSettings() handles redrawing via setTimeout
+  // Redraw canvas whenever image or settings change
+  useEffect(() => {
+    if (image) {
+      drawCanvas();
+    }
+  }, [image, text, fontSize, textColor, textX, textY]);
   const handleDownloadClick = () => {
     if (!canvasRef.current) return;
     setShowAdModal(true);
@@ -98,10 +101,6 @@ const TextOnPhoto = () => {
     setFileName("text-on-photo");
   };
 
-  // Update canvas whenever settings change
-  const updateSettings = () => {
-    setTimeout(drawCanvas, 0);
-  };
 
   return (
     <ToolLayout
@@ -134,7 +133,7 @@ const TextOnPhoto = () => {
                 <Label>Text</Label>
                 <Input
                   value={text}
-                  onChange={(e) => { setText(e.target.value); updateSettings(); }}
+                  onChange={(e) => setText(e.target.value)}
                   placeholder="Enter your text"
                   className="h-12"
                 />
@@ -144,7 +143,7 @@ const TextOnPhoto = () => {
                 <Label>Font Size: {fontSize[0]}px</Label>
                 <Slider
                   value={fontSize}
-                  onValueChange={(v) => { setFontSize(v); updateSettings(); }}
+                  onValueChange={(v) => setFontSize(v)}
                   min={12}
                   max={120}
                   step={2}
@@ -157,12 +156,12 @@ const TextOnPhoto = () => {
                   <input
                     type="color"
                     value={textColor}
-                    onChange={(e) => { setTextColor(e.target.value); updateSettings(); }}
+                    onChange={(e) => setTextColor(e.target.value)}
                     className="w-12 h-12 rounded-lg cursor-pointer"
                   />
                   <Input
                     value={textColor}
-                    onChange={(e) => { setTextColor(e.target.value); updateSettings(); }}
+                    onChange={(e) => setTextColor(e.target.value)}
                     className="h-12"
                   />
                 </div>
@@ -172,7 +171,7 @@ const TextOnPhoto = () => {
                 <Label>Horizontal Position: {textX[0]}%</Label>
                 <Slider
                   value={textX}
-                  onValueChange={(v) => { setTextX(v); updateSettings(); }}
+                  onValueChange={(v) => setTextX(v)}
                   min={0}
                   max={100}
                 />
@@ -182,7 +181,7 @@ const TextOnPhoto = () => {
                 <Label>Vertical Position: {textY[0]}%</Label>
                 <Slider
                   value={textY}
-                  onValueChange={(v) => { setTextY(v); updateSettings(); }}
+                  onValueChange={(v) => setTextY(v)}
                   min={0}
                   max={100}
                 />
