@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Wrench, Heart, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
 import donateQr from "@/assets/donate-qr.png";
 
 const XIcon = () => (
@@ -40,10 +41,15 @@ const SocialLinks = () => {
 };
 
 const DonateSection = () => {
+  const [liked, setLiked] = useState(false);
+
   return (
     <div id="donate" className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-5 border border-primary/20">
       <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
-        <Heart className="w-5 h-5 text-destructive animate-pulse" /> Support Us
+        <Heart
+          className={`w-5 h-5 cursor-pointer transition-colors ${liked ? 'text-red-500 fill-red-500' : 'text-destructive'} animate-pulse`}
+          onClick={() => setLiked(!liked)}
+        /> Support Us
       </h3>
       <p className="text-sm text-muted-foreground mb-4">
         Help us keep this free & secure for everyone!
