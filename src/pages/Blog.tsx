@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 12,
+    slug: "resizing-identity-documents-australian-rental-applications",
+    title: "Resizing Identity Documents for Australian Rental Applications (1Form/2Apply Guide)",
+    excerpt: "Learn how to resize your identity documents like passport, driver's licence, and bank statements to meet 1Form and 2Apply upload requirements for Australian rental applications.",
+    category: "Image Tools",
+    date: "2026-02-13",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop"
+  },
+  {
     id: 11,
     slug: "army-agniveer-photo-signature-size",
     title: "Army Agniveer Recruitment 2026: Photo और Signature का Size कैसे कम करें?",
