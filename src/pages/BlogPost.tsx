@@ -2748,6 +2748,257 @@ Resizing identity documents for Australian rental applications doesn't have to b
 
 **ToolsKit.tech – Free Online Tools for Everyone! 🚀**
     `
+  },
+  "resizing-documents-uk-visa-applications": {
+    id: 13,
+    slug: "resizing-documents-uk-visa-applications",
+    title: "Resizing Documents for UK Visa Applications: Step-by-Step Guide (2026)",
+    excerpt: "Learn how to resize your photos, documents, and supporting files to meet UK visa application requirements. Complete step-by-step guide for all UK visa types.",
+    category: "Image Tools",
+    date: "2026-02-13",
+    readTime: "14 min read",
+    image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=1200&h=600&fit=crop",
+    relatedTool: "/tools/kb-converter",
+    content: `
+## Introduction
+
+Applying for a UK visa — whether it's a Standard Visitor Visa, Student Visa, Skilled Worker Visa, or Family Visa — requires submitting several documents digitally through the UK Visas and Immigration (UKVI) online portal. One of the most common reasons for application delays or rejections is **incorrectly sized documents and photos**.
+
+This comprehensive guide will walk you through the exact size requirements for UK visa applications and show you how to resize your documents using free online tools — no software downloads needed.
+
+[AD_BANNER]
+
+## UK Visa Photo Requirements
+
+The UK government has strict requirements for visa photos. Here are the official specifications:
+
+### Photo Dimensions and Size
+- **Dimensions**: 45mm x 35mm (standard passport photo size)
+- **Digital file size**: Between **50 KB and 10 MB**
+- **File format**: JPEG (.jpg)
+- **Resolution**: At least 600 x 750 pixels
+- **Colour**: Full colour (no black and white)
+
+### Photo Quality Standards
+- **Background**: Plain light grey or cream background
+- **Expression**: Neutral expression, mouth closed
+- **Eyes**: Open and clearly visible, no glasses with tinted lenses
+- **Head position**: Facing forward, looking straight at the camera
+- **Head covering**: Only permitted for religious reasons
+- **No filters or digital alterations**
+
+### Common Photo Rejection Reasons
+1. File size too large (over 10 MB)
+2. File size too small (under 50 KB)
+3. Wrong dimensions or aspect ratio
+4. Poor lighting or shadows on face
+5. Background not plain or wrong colour
+6. Photo is blurry or pixelated
+
+## Document Size Requirements for UK Visa Portal
+
+When uploading supporting documents to the UKVI portal, you need to follow these specifications:
+
+### General Document Requirements
+- **Maximum file size**: 6 MB per document
+- **Accepted formats**: JPEG, PNG, PDF
+- **Maximum pages**: Combine multi-page documents into a single PDF
+- **Resolution**: Clear and legible, minimum 300 DPI recommended
+
+### Common Documents You'll Need to Upload
+- Passport bio-data page
+- Bank statements (usually last 6 months)
+- Employment letter or university offer letter
+- Proof of accommodation
+- TB test results (if applicable)
+- English language test results
+- Previous visa copies
+- Utility bills or council tax statements
+
+[AD_BANNER]
+
+## Step-by-Step Guide: Resizing Your UK Visa Photo
+
+Follow these steps to resize your photo to meet UK visa requirements:
+
+### Step 1: Check Your Current Photo Size
+Before resizing, check your photo's current dimensions and file size. On Windows, right-click the file and select "Properties." On Mac, right-click and select "Get Info."
+
+### Step 2: Crop to Correct Dimensions
+Use the [Image Cropper Tool](/tools/image-cropper) to crop your photo to the correct 45:35 aspect ratio. This ensures your face is properly centred and the proportions meet UKVI requirements.
+
+1. Upload your photo to the **[Image Cropper](/tools/image-cropper)**
+2. Set the aspect ratio to 45:35 (or 9:7)
+3. Position the crop area so your face is centred
+4. Ensure your head takes up 70-80% of the frame height
+5. Click "Crop" and download
+
+### Step 3: Reduce File Size if Needed
+If your photo is over 10 MB, use the [KB Converter Tool](/tools/kb-converter) to reduce it to the required size:
+
+1. Open the **[KB Converter](/tools/kb-converter)**
+2. Upload your cropped photo
+3. Set the target size (e.g., 500 KB for a good balance of quality and size)
+4. Download the optimised photo
+
+### Step 4: Compress Without Quality Loss
+For the best results, use the [Image Compressor](/tools/image-compressor) to fine-tune the compression:
+
+1. Upload your photo to the **[Image Compressor](/tools/image-compressor)**
+2. Adjust the quality slider — 85% is recommended for visa photos
+3. Preview the compressed version to ensure clarity
+4. Download when satisfied
+
+[AD_BANNER]
+
+## Step-by-Step Guide: Resizing Supporting Documents
+
+### Resizing Scanned Documents (Bank Statements, Letters)
+
+If your scanned documents exceed the 6 MB limit:
+
+1. **Scan at the right resolution**: 300 DPI is sufficient for most documents. Higher DPI creates unnecessarily large files.
+
+2. **Use the [Image Compressor](/tools/image-compressor)**: Upload each page and compress to reduce file size while maintaining readability.
+
+3. **Convert to PDF**: Use the [Image to PDF Tool](/tools/image-to-pdf) to combine multiple pages into a single, organised PDF document.
+
+### Resizing Passport Scans
+
+Your passport bio-data page scan should be:
+- Clear and legible
+- Under 6 MB
+- In colour (not black and white)
+- Full page visible with all four corners showing
+
+**Steps:**
+1. Scan your passport at 300 DPI
+2. Use the **[Image Cropper](/tools/image-cropper)** to remove excess white space
+3. If the file is still too large, compress it with the **[KB Converter](/tools/kb-converter)**
+
+### Converting PDF Documents to Images
+
+Some sections of the UKVI portal only accept image files. If you have PDF documents:
+
+1. Open the **[PDF to Image Tool](/tools/pdf-to-image)**
+2. Upload your PDF document
+3. Select the pages you need
+4. Download as JPEG images
+5. Compress if needed using the **[Image Compressor](/tools/image-compressor)**
+
+[AD_BANNER]
+
+## UK Visa Types and Specific Requirements
+
+### Standard Visitor Visa (Tourism/Business)
+- **Photo**: 45x35mm, 50KB-10MB, JPEG
+- **Documents**: Passport, bank statements, travel itinerary, accommodation proof
+- **Total uploads**: Usually 5-8 documents
+
+### Student Visa (formerly Tier 4)
+- **Photo**: Same as above
+- **Additional documents**: CAS letter, financial evidence (28+ days), ATAS certificate (if required)
+- **Important**: Bank statements must show funds held for at least 28 consecutive days
+
+### Skilled Worker Visa (formerly Tier 2)
+- **Photo**: Same as above
+- **Additional documents**: Certificate of Sponsorship (CoS), salary evidence, English language proof
+- **Tip**: Combine multi-page employment contracts into a single PDF using the **[Image to PDF Tool](/tools/image-to-pdf)**
+
+### Family Visa (Spouse/Partner)
+- **Photo**: Same as above
+- **Additional documents**: Relationship evidence, financial requirement proof, English language test
+- **Note**: You may need to upload many photos as relationship evidence — compress them all using the **[KB Converter](/tools/kb-converter)**
+
+## Tips for a Successful Document Upload
+
+### 1. Organise Before You Start
+Create a folder on your computer and name each file clearly:
+- passport-scan.jpg
+- bank-statement-jan-2026.pdf
+- employment-letter.pdf
+- photo-visa.jpg
+
+### 2. Check File Sizes Before Uploading
+Use your computer's file manager to verify each file is under 6 MB before starting the application.
+
+### 3. Ensure Readability
+After compressing, zoom in to check that all text is still legible. For bank statements, ensure account numbers and transaction details are clear.
+
+### 4. Use Consistent Formatting
+Try to keep all documents in the same format (preferably JPEG for single pages, PDF for multi-page documents).
+
+### 5. Keep Original Copies
+Always keep the original, uncompressed versions of your documents. You may need them for the visa interview or biometric appointment.
+
+[AD_BANNER]
+
+## Removing Backgrounds from ID Photos
+
+If your visa photo has an incorrect background, use the [Background Remover Tool](/tools/remove-background) to remove it:
+
+1. Upload your photo to the **[Background Remover](/tools/remove-background)**
+2. The AI will automatically detect and remove the background
+3. Download the transparent image
+4. Add a plain light grey or cream background using any photo editor
+5. Crop and resize as described above
+
+## Adding Text to Documents
+
+Need to add annotations or labels to your documents? Use the [Text on Photo Tool](/tools/text-on-photo):
+
+1. Open the **[Text on Photo Tool](/tools/text-on-photo)**
+2. Upload your document
+3. Add the required text or labels
+4. Download the annotated version
+
+## Mobile Users: How to Resize on Your Phone
+
+You don't need a computer to resize your documents! All the tools mentioned in this guide work on mobile browsers:
+
+1. Open **[ToolsKit.tech](/)** on your phone browser
+2. Navigate to the tool you need (e.g., **[KB Converter](/tools/kb-converter)**)
+3. Upload photos directly from your phone's camera or gallery
+4. Resize and download — files save directly to your phone
+
+## Frequently Asked Questions
+
+### What is the maximum file size for UK visa photo uploads?
+The UK visa photo must be between 50 KB and 10 MB in JPEG format. Use the [KB Converter](/tools/kb-converter) to adjust your photo to the correct size.
+
+### Can I upload PDF documents for my UK visa application?
+Yes, the UKVI portal accepts JPEG, PNG, and PDF formats. For multi-page documents like bank statements, PDF is recommended. Use the [Image to PDF Tool](/tools/image-to-pdf) to create PDFs.
+
+### What resolution should my UK visa photo be?
+Your photo should be at least 600 x 750 pixels. Use the [Image Cropper](/tools/image-cropper) to ensure correct dimensions.
+
+### How do I reduce the file size of my bank statements?
+Scan your bank statements at 300 DPI, then use the [Image Compressor](/tools/image-compressor) to reduce file size while maintaining readability.
+
+### Can I take my UK visa photo with my phone?
+Yes, as long as the photo meets all requirements (plain background, correct dimensions, good lighting). Use the [KB Converter](/tools/kb-converter) to resize and the [Image Cropper](/tools/image-cropper) to crop to 45x35mm ratio.
+
+### What happens if my documents are rejected?
+You'll receive an email asking you to resubmit. Use the tools in this guide to ensure your documents meet all requirements before resubmitting.
+
+### Do I need to resize documents for the biometric appointment?
+Physical documents brought to the biometric appointment don't need digital resizing, but having digital copies ready is recommended.
+
+## Conclusion
+
+Resizing documents for UK visa applications doesn't have to be stressful. By following this step-by-step guide and using the free tools available at **[ToolsKit.tech](/)**, you can ensure all your documents meet UKVI requirements without spending money on professional services.
+
+**Quick Tool Reference:**
+- **[KB Converter](/tools/kb-converter)** — Reduce file size to exact KB
+- **[Image Compressor](/tools/image-compressor)** — Compress with quality control
+- **[Image Cropper](/tools/image-cropper)** — Crop to correct dimensions
+- **[Image to PDF](/tools/image-to-pdf)** — Combine pages into PDF
+- **[PDF to Image](/tools/pdf-to-image)** — Extract images from PDF
+- **[Background Remover](/tools/remove-background)** — Fix photo backgrounds
+- **[Text on Photo](/tools/text-on-photo)** — Add annotations to documents
+
+Good luck with your UK visa application! 🇬🇧
+    `
   }
 };
 

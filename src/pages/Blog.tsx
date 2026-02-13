@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 13,
+    slug: "resizing-documents-uk-visa-applications",
+    title: "Resizing Documents for UK Visa Applications: Step-by-Step Guide (2026)",
+    excerpt: "Learn how to resize your photos, documents, and supporting files to meet UK visa application requirements. Complete step-by-step guide for all UK visa types.",
+    category: "Image Tools",
+    date: "2026-02-13",
+    readTime: "14 min read",
+    image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=600&h=400&fit=crop"
+  },
+  {
     id: 12,
     slug: "resizing-identity-documents-australian-rental-applications",
     title: "Resizing Identity Documents for Australian Rental Applications (1Form/2Apply Guide)",
