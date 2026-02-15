@@ -428,6 +428,32 @@ export const toolsSEO: Record<string, ToolSEO> = {
         "Instant Processing – Fast conversion happens right in your browser"
       ]
     }
+  },
+  "time-zone-converter": {
+    title: "Free Time Zone Converter Online - Convert Time Between Zones",
+    h1Title: "Time Zone Converter - Convert Time Between Any Time Zones Free",
+    description: "Convert time between time zones instantly. Free online time zone converter with live clocks. IST to EST, PST to GMT, and 25+ zones. No signup required.",
+    keywords: "time zone converter, convert time zones, IST to EST, PST to GMT, time difference calculator, world clock, free time zone converter",
+    faqs: [
+      { question: "How do I convert IST to EST?", answer: "Select 'India (IST)' as the source and 'New York (EST/EDT)' as the target. Enter your date and time to see the instant conversion. IST is typically 10.5 hours ahead of EST." },
+      { question: "Does this tool handle Daylight Saving Time?", answer: "Yes! Our converter automatically accounts for DST changes using your browser's built-in IANA timezone database." },
+      { question: "How many time zones are supported?", answer: "We support 25+ major time zones covering all continents including New York, London, Tokyo, Dubai, Sydney, Mumbai, and more." },
+      { question: "Is the time conversion accurate?", answer: "Yes, our tool uses the Intl.DateTimeFormat API which relies on the IANA time zone database, the most accurate timezone database in the world." }
+    ],
+    article: {
+      introduction: "Managing time across different time zones is a common challenge in our connected world. Whether you're scheduling international meetings, planning calls with overseas clients, coordinating with remote team members, or figuring out the right time to call a friend abroad, our free Time Zone Converter makes it effortless. This tool supports 25+ major time zones worldwide and provides real-time live clocks, instant conversion, and automatic Daylight Saving Time handling. Everything runs in your browser with zero signup required.",
+      howToUse: "Start by selecting your source time zone from the 'From' dropdown – for example, India (IST). Next, select your destination time zone from the 'To' dropdown – such as New York (EST/EDT). Then enter the date and time you want to convert. The converted time appears instantly below, showing the full date, day of week, and formatted time. You can also use the swap button to quickly reverse the conversion direction. The live clocks at the top always show the current time in both selected zones.",
+      keyFeatures: [
+        "25+ Time Zones – Covers all major cities and regions worldwide",
+        "Live Clocks – Real-time display of current time in both selected zones",
+        "DST Aware – Automatically handles Daylight Saving Time transitions",
+        "Instant Conversion – Results update in real-time as you type",
+        "Swap Button – Quickly reverse source and destination zones",
+        "Date Support – Convert time for any date, not just today",
+        "100% Free – No signup, no limits, no hidden fees",
+        "Browser-Based – Works offline after loading, no data sent to servers"
+      ]
+    }
   }
 };
 

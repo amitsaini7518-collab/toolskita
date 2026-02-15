@@ -4,7 +4,7 @@ import ToolCard from "@/components/home/ToolCard";
 import { 
   FileImage, FileText, Crop, Minimize2, Eraser, 
   Calendar, QrCode, Palette, ArrowRightLeft, Type,
-  Binary, Heart, FileDown
+  Binary, Heart, FileDown, Clock
 } from "lucide-react";
 
 const tools = [
@@ -98,6 +98,13 @@ const tools = [
     icon: Heart,
     path: "/tools/bmi-calculator",
     color: "#EF4444"
+  },
+  {
+    title: "Time Zone Converter",
+    description: "Convert time between different zones",
+    icon: Clock,
+    path: "/tools/time-zone-converter",
+    color: "#0EA5E9"
   },
 ];
 

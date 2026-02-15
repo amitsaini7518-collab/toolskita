@@ -30,6 +30,7 @@ import ImageToPDF from "./pages/tools/ImageToPDF";
 import PDFToImage from "./pages/tools/PDFToImage";
 import RemoveBackground from "./pages/tools/RemoveBackground";
 import KBConverter from "./pages/tools/KBConverter";
+import TimeZoneConverter from "./pages/tools/TimeZoneConverter";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ const App = () => (
           <Route path="/tools/image-to-pdf" element={<ImageToPDF />} />
           <Route path="/tools/pdf-to-image" element={<PDFToImage />} />
           <Route path="/tools/remove-background" element={<RemoveBackground />} />
+          <Route path="/tools/time-zone-converter" element={<TimeZoneConverter />} />
           
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
