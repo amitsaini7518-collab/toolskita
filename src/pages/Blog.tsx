@@ -145,7 +145,7 @@ const blogPosts = [
     category: "PDF Tools",
     date: "2024-11-20",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1586953208270-767889fa9b4e?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop"
   },
   {
     id: 6,

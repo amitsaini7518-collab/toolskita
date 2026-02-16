@@ -539,7 +539,7 @@ Remember, if you have concerns about your weight or health, always consult with 
     category: "PDF Tools",
     date: "2024-11-20",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1586953208270-767889fa9b4e?w=1200&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1200&h=600&fit=crop",
     relatedTool: "/tools/image-to-pdf",
     content: `
 ## Introduction
