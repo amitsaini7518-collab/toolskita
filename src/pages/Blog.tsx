@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 15,
+    slug: "metric-vs-imperial-unit-conversion-guide-usa",
+    title: "Metric vs. Imperial: The Ultimate Unit Conversion Guide for Moving to the USA (2026)",
+    excerpt: "Moving to America? Master the US measurement system with this complete guide covering miles, Fahrenheit, pounds, gallons, and more — with easy conversion tips and free tools.",
+    category: "Converter Tools",
+    date: "2026-02-16",
+    readTime: "16 min read",
+    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f04?w=600&h=400&fit=crop"
+  },
+  {
     id: 14,
     slug: "time-zone-converter-complete-guide",
     title: "Time Zone Converter: The Complete Guide to Converting Time Between Zones (2026)",
