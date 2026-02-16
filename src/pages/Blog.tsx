@@ -15,7 +15,7 @@ const blogPosts = [
     category: "Converter Tools",
     date: "2026-02-16",
     readTime: "16 min read",
-    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f04?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=600&h=400&fit=crop"
   },
   {
     id: 14,
