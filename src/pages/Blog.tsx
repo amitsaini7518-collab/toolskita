@@ -15,7 +15,7 @@ const blogPosts = [
     category: "Career Guide",
     date: "2026-02-17",
     readTime: "18 min read",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600&h=400&fit=crop"
   },
   {
     id: 15,
