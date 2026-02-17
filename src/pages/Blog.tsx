@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 16,
+    slug: "12th-ke-baad-kya-kare",
+    title: "12th के बाद क्या करें? – Complete Career Guide After 12th (2026)",
+    excerpt: "12th पास करने के बाद कौन सा कोर्स करें? Science, Commerce, Arts सभी स्ट्रीम के लिए बेस्ट करियर ऑप्शन्स, टॉप कोर्सेज, और फ्री ऑनलाइन टूल्स की पूरी जानकारी।",
+    category: "Career Guide",
+    date: "2026-02-17",
+    readTime: "18 min read",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&h=400&fit=crop"
+  },
+  {
     id: 15,
     slug: "metric-vs-imperial-unit-conversion-guide-usa",
     title: "Metric vs. Imperial: The Ultimate Unit Conversion Guide for Moving to the USA (2026)",

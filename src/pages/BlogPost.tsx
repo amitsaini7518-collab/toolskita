@@ -3516,6 +3516,307 @@ Welcome to America — and welcome to the world of Imperial measurements!
 
 Explore all our **[free online tools](/tools)** at ToolsKit.tech — from **[Image Compressor](/tools/image-compressor)** and **[PDF Converter](/tools/image-to-pdf)** to **[BMI Calculator](/tools/bmi-calculator)** and **[Color Picker](/tools/color-picker)** — everything is 100% free, no signup, no hassle.
     `
+  },
+  "12th-ke-baad-kya-kare": {
+    id: 16,
+    slug: "12th-ke-baad-kya-kare",
+    title: "12th के बाद क्या करें? – Complete Career Guide After 12th (2026)",
+    excerpt: "12th पास करने के बाद कौन सा कोर्स करें? Science, Commerce, Arts सभी स्ट्रीम के लिए बेस्ट करियर ऑप्शन्स, टॉप कोर्सेज, और फ्री ऑनलाइन टूल्स की पूरी जानकारी।",
+    category: "Career Guide",
+    date: "2026-02-17",
+    readTime: "18 min read",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=1200&h=600&fit=crop",
+    content: `
+## Introduction
+
+12th की परीक्षा पास करने के बाद हर स्टूडेंट के मन में एक ही सवाल होता है — **"अब आगे क्या करें?"** यह सवाल सिर्फ आपका नहीं है, लाखों स्टूडेंट्स हर साल इसी confusion में रहते हैं।
+
+सही करियर चुनना बहुत ज़रूरी है क्योंकि यही decision आपकी ज़िंदगी की दिशा तय करता है। इस गाइड में हम **Science, Commerce, और Arts** तीनों स्ट्रीम के लिए बेस्ट करियर ऑप्शन्स, टॉप कोर्सेज, एंट्रेंस एग्जाम्स, और सैलरी की पूरी जानकारी देंगे।
+
+[AD_BANNER]
+
+## 12th के बाद करियर कैसे चुनें?
+
+करियर चुनने से पहले ये 5 बातें ज़रूर सोचें:
+
+1. **Interest (रुचि):** आपको किस subject में सबसे ज्यादा मज़ा आता है?
+2. **Aptitude (योग्यता):** आप किस field में naturally अच्छे हैं?
+3. **Scope (भविष्य):** उस field में jobs की demand कैसी है?
+4. **Family Support:** घर वाले financially support कर सकते हैं?
+5. **Location:** क्या आप दूसरे शहर जा सकते हैं पढ़ाई के लिए?
+
+> **Pro Tip:** अपनी उम्र calculate करने के लिए हमारा फ्री **[Age Calculator](/tools/age-calculator)** इस्तेमाल करें — कई entrance exams में age limit होती है!
+
+## 🔬 Science Stream (PCM/PCB) के बाद करियर ऑप्शन्स
+
+### A) PCM (Physics, Chemistry, Maths) के बाद
+
+#### 1. Engineering (B.Tech / B.E.)
+- **Duration:** 4 साल
+- **Top Entrance Exams:** JEE Main, JEE Advanced, BITSAT, VITEEE
+- **Top Colleges:** IITs, NITs, BITS Pilani, VIT
+- **Starting Salary:** ₹3 लाख - ₹25 लाख/साल
+- **Popular Branches:**
+  - Computer Science Engineering (CSE) — सबसे ज्यादा demand
+  - Artificial Intelligence & Machine Learning
+  - Electronics & Communication
+  - Mechanical Engineering
+  - Civil Engineering
+
+#### 2. B.Sc. (Bachelor of Science)
+- **Duration:** 3 साल
+- **Subjects:** Physics, Chemistry, Maths, Statistics, Computer Science
+- **Career:** Research, Teaching, Government Jobs
+- **Starting Salary:** ₹2.5 लाख - ₹6 लाख/साल
+
+#### 3. BCA (Bachelor of Computer Applications)
+- **Duration:** 3 साल
+- **Best for:** IT & Software Development
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+- **आगे:** MCA करके और अच्छी jobs मिलती हैं
+
+#### 4. B.Arch (Architecture)
+- **Duration:** 5 साल
+- **Entrance:** NATA, JEE Main Paper 2
+- **Starting Salary:** ₹3 लाख - ₹10 लाख/साल
+
+#### 5. Merchant Navy
+- **Duration:** 1-3 साल (course dependent)
+- **Starting Salary:** ₹5 लाख - ₹15 लाख/साल
+- **Best for:** Adventure lovers, travel enthusiasts
+
+[AD_BANNER]
+
+### B) PCB (Physics, Chemistry, Biology) के बाद
+
+#### 1. MBBS (Doctor बनें)
+- **Duration:** 5.5 साल (including internship)
+- **Entrance:** NEET UG
+- **Top Colleges:** AIIMS, JIPMER, Government Medical Colleges
+- **Starting Salary:** ₹5 लाख - ₹15 लाख/साल
+- **Specialization के बाद:** ₹15 लाख - ₹1 करोड़+
+
+#### 2. BDS (Dentist)
+- **Duration:** 5 साल
+- **Entrance:** NEET UG
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+
+#### 3. B.Pharm (Pharmacy)
+- **Duration:** 4 साल
+- **Career:** Pharmaceutical companies, Hospital Pharmacy, Research
+- **Starting Salary:** ₹2.5 लाख - ₹6 लाख/साल
+
+#### 4. Nursing (B.Sc Nursing / GNM)
+- **Duration:** 4 साल (B.Sc) / 3.5 साल (GNM)
+- **Demand:** India और abroad दोनों में बहुत ज्यादा
+- **Starting Salary:** ₹2.5 लाख - ₹6 लाख/साल (India), $50,000+ (Abroad)
+
+#### 5. Biotechnology
+- **Duration:** 4 साल
+- **Career:** Research, Pharma, Agriculture
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+
+> **Important:** NEET और JEE form भरते समय **Photo और Signature** का size सही होना ज़रूरी है। हमारा **[KB Converter](/tools/kb-converter)** और **[Image Compressor](/tools/image-compressor)** इस्तेमाल करें!
+
+## 💼 Commerce Stream के बाद करियर ऑप्शन्स
+
+#### 1. CA (Chartered Accountant)
+- **Duration:** 4-5 साल
+- **Entrance:** CA Foundation (after 12th)
+- **Starting Salary:** ₹7 लाख - ₹15 लाख/साल
+- **Top Salary:** ₹30 लाख - ₹1 करोड़+
+- **Best for:** Accounts, Finance, Taxation में interest
+
+#### 2. B.Com (Bachelor of Commerce)
+- **Duration:** 3 साल
+- **Specializations:** Accounting, Finance, Taxation, Banking
+- **Starting Salary:** ₹2 लाख - ₹5 लाख/साल
+- **आगे:** M.Com, MBA, CA, CS कर सकते हैं
+
+#### 3. BBA (Bachelor of Business Administration)
+- **Duration:** 3 साल
+- **Top Colleges:** Christ University, Symbiosis, NMIMS
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+- **आगे:** MBA करके salary और बढ़ती है
+
+#### 4. CS (Company Secretary)
+- **Duration:** 3-4 साल
+- **Starting Salary:** ₹4 लाख - ₹10 लाख/साल
+- **Career:** Corporate Governance, Legal Compliance
+
+[AD_BANNER]
+
+#### 5. CMA (Cost Management Accountant)
+- **Duration:** 3-4 साल
+- **Starting Salary:** ₹4 लाख - ₹10 लाख/साल
+- **Career:** Cost Accounting, Financial Planning
+
+#### 6. Banking & Insurance
+- **Exams:** IBPS PO, SBI PO, LIC AAO
+- **Starting Salary:** ₹4 लाख - ₹8 लाख/साल
+- **Best for:** Government job चाहने वाले
+
+## 🎨 Arts / Humanities Stream के बाद करियर ऑप्शन्स
+
+#### 1. BA (Bachelor of Arts)
+- **Duration:** 3 साल
+- **Popular Subjects:** English, Hindi, History, Political Science, Psychology, Sociology
+- **Starting Salary:** ₹2 लाख - ₹5 लाख/साल
+- **आगे:** MA, MBA, Government Exams
+
+#### 2. Law (BA LLB / LLB)
+- **Duration:** 5 साल (BA LLB) / 3 साल (LLB after graduation)
+- **Entrance:** CLAT, AILET, LSAT
+- **Top Colleges:** NLUs, Faculty of Law (DU)
+- **Starting Salary:** ₹3 लाख - ₹15 लाख/साल
+
+#### 3. Journalism & Mass Communication
+- **Duration:** 3 साल
+- **Career:** News Reporter, Content Writer, PR, Digital Marketing
+- **Starting Salary:** ₹2.5 लाख - ₹6 लाख/साल
+
+#### 4. Fashion Design / Interior Design
+- **Duration:** 4 साल
+- **Entrance:** NIFT, NID, CEED
+- **Starting Salary:** ₹3 लाख - ₹10 लाख/साल
+
+#### 5. Hotel Management
+- **Duration:** 4 साल
+- **Entrance:** NCHMCT JEE
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+- **Best for:** Hospitality, Food Industry, Travel & Tourism
+
+#### 6. Social Work (BSW)
+- **Duration:** 3 साल
+- **Career:** NGO, CSR, Government Welfare Departments
+- **Starting Salary:** ₹2 लाख - ₹5 लाख/साल
+
+[AD_BANNER]
+
+## 🌐 किसी भी Stream से कर सकते हैं — ये Courses
+
+ये courses **Science, Commerce, और Arts** तीनों stream के students कर सकते हैं:
+
+### 1. Digital Marketing
+- **Duration:** 3-6 महीने (certificate), 1-2 साल (diploma)
+- **Starting Salary:** ₹3 लाख - ₹8 लाख/साल
+- **Freelancing:** ₹50,000 - ₹5 लाख/महीना (experienced)
+
+### 2. Graphic Design & UI/UX Design
+- **Duration:** 6 महीने - 2 साल
+- **Starting Salary:** ₹3 लाख - ₹10 लाख/साल
+- **Tools:** Photoshop, Figma, Canva
+
+> **Tip:** Design सीखते समय हमारा **[Color Picker](/tools/color-picker)** tool बहुत काम आएगा — perfect color combinations चुनने के लिए!
+
+### 3. Web Development / App Development
+- **Duration:** 6 महीने - 1 साल (self-learning)
+- **Starting Salary:** ₹4 लाख - ₹15 लाख/साल
+- **Languages:** HTML, CSS, JavaScript, Python
+
+### 4. Data Science & AI
+- **Duration:** 6 महीने - 2 साल
+- **Starting Salary:** ₹5 लाख - ₹20 लाख/साल
+- **Best for:** Maths में strong students
+
+### 5. Content Writing / Blogging
+- **Starting Salary:** ₹2 लाख - ₹6 लाख/साल
+- **Freelancing:** ₹20,000 - ₹2 लाख/महीना
+- **Best for:** Writing में interest रखने वाले
+
+## 🏛️ Government Jobs — 12th के बाद
+
+| Exam | Post | Salary (Monthly) |
+|------|------|-------------------|
+| SSC CHSL | LDC, DEO, PA | ₹25,000 - ₹45,000 |
+| SSC MTS | Multi Tasking Staff | ₹18,000 - ₹30,000 |
+| Railway Group D | Track Maintainer, Helper | ₹18,000 - ₹30,000 |
+| Army Agniveer | Soldier | ₹30,000 - ₹40,000 |
+| Police Constable | State Police | ₹20,000 - ₹35,000 |
+| Banking Clerk | IBPS Clerk | ₹20,000 - ₹35,000 |
+
+> **Important:** Government exam forms भरते समय Photo, Signature, और Documents का size सही format में होना ज़रूरी है। हमारे ये free tools इस्तेमाल करें:
+> - **[KB Converter](/tools/kb-converter):** Photo को exact KB size में convert करें
+> - **[Image Compressor](/tools/image-compressor):** Photo quality maintain करते हुए size कम करें
+> - **[Image Cropper](/tools/image-cropper):** Photo को सही dimensions में crop करें
+> - **[Image to PDF](/tools/image-to-pdf):** Documents को PDF format में convert करें
+
+[AD_BANNER]
+
+## 🌍 Abroad Study — 12th के बाद विदेश में पढ़ाई
+
+### Popular Destinations
+
+| Country | Popular Courses | Approx Cost (per year) |
+|---------|----------------|----------------------|
+| USA | Engineering, MBA, CS | $20,000 - $60,000 |
+| UK | Business, Law, Medicine | £10,000 - £38,000 |
+| Canada | IT, Healthcare, Business | CAD 15,000 - 35,000 |
+| Australia | Engineering, Nursing, IT | AUD 20,000 - 45,000 |
+| Germany | Engineering, Research | €0 - €3,000 (mostly free!) |
+
+### Abroad जाने के लिए ज़रूरी चीज़ें:
+1. **IELTS / TOEFL** score
+2. **Passport & Visa**
+3. **SOP (Statement of Purpose)**
+4. **LOR (Letters of Recommendation)**
+5. **Financial Documents**
+
+> **Tip:** Visa application के लिए documents resize करने हों तो हमारा **[Image Compressor](/tools/image-compressor)** और **[KB Converter](/tools/kb-converter)** use करें। UK visa photo requirements के लिए हमारी **[UK Visa Photo Guide](/blog/resizing-documents-uk-visa-applications)** पढ़ें।
+
+## 📊 Stream-wise Quick Comparison
+
+| Factor | Science | Commerce | Arts |
+|--------|---------|----------|------|
+| Difficulty | High | Medium | Medium |
+| Job Options | Very High | High | Medium |
+| Starting Salary | ₹3-25L | ₹2-15L | ₹2-10L |
+| Government Jobs | Yes | Yes | Yes |
+| Abroad Scope | Very High | High | Medium |
+| Competition | Very High | High | Medium |
+
+## ❌ Common Mistakes — इनसे बचें!
+
+1. **दूसरों को देखकर course मत चुनो** — अपनी रुचि देखो
+2. **सिर्फ salary मत देखो** — job satisfaction भी ज़रूरी है
+3. **Trending course के पीछे मत भागो** — 4 साल बाद trend बदल सकता है
+4. **Parents का pressure मत लो** — उन्हें समझाओ अपना passion
+5. **Research ज़रूर करो** — जल्दबाज़ी में decision मत लो
+6. **Backup plan रखो** — एक ही exam पर depend मत रहो
+
+## 🛠️ ToolsKit.tech के Free Tools — Students के लिए
+
+हमारे सभी tools **100% free** हैं, **कोई signup नहीं**, और **privacy-first** हैं:
+
+- **[Image Compressor](/tools/image-compressor):** Exam form के लिए photo size कम करें
+- **[KB Converter](/tools/kb-converter):** Photo को exact KB में convert करें (20KB, 50KB, 100KB)
+- **[Image Cropper](/tools/image-cropper):** Passport size photo crop करें
+- **[Image to PDF](/tools/image-to-pdf):** Documents को PDF में बदलें
+- **[PDF to Image](/tools/pdf-to-image):** PDF से images निकालें
+- **[Remove Background](/tools/remove-background):** Photo का background हटाएं
+- **[Text on Photo](/tools/text-on-photo):** Photo पर text लिखें
+- **[QR Generator](/tools/qr-generator):** QR Code बनाएं
+- **[Age Calculator](/tools/age-calculator):** अपनी exact उम्र जानें
+- **[BMI Calculator](/tools/bmi-calculator):** Health check करें
+- **[Unit Converter](/tools/unit-converter):** Units convert करें
+- **[Number Converter](/tools/number-converter):** Number systems convert करें
+- **[Color Picker](/tools/color-picker):** Colors चुनें design के लिए
+- **[Time Zone Converter](/tools/time-zone-converter):** Time zones convert करें
+
+## Conclusion
+
+12th के बाद करियर चुनना एक बड़ा decision है, लेकिन सही जानकारी और planning से आप best choice कर सकते हैं। चाहे आप **Doctor** बनना चाहें, **Engineer**, **CA**, **Lawyer**, या **Digital Marketer** — हर field में opportunities हैं।
+
+**याद रखें:**
+- अपनी **रुचि** और **योग्यता** के हिसाब से course चुनें
+- **Research** करें और **counseling** लें
+- Entrance exam forms भरते समय हमारे **[free tools](/tools)** ज़रूर इस्तेमाल करें
+- **Backup plan** ज़रूर रखें
+
+**All the best! आपका future bright है! 🌟**
+
+हमारे सभी **[free online tools](/tools)** explore करें — **[Image Compressor](/tools/image-compressor)**, **[KB Converter](/tools/kb-converter)**, **[PDF Converter](/tools/image-to-pdf)**, **[BMI Calculator](/tools/bmi-calculator)** और भी बहुत कुछ — सब कुछ 100% free!
+    `
   }
 };
 
