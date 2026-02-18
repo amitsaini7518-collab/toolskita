@@ -7,9 +7,10 @@ import ToolLayout from "@/components/tools/ToolLayout";
 import { AdDownloadModal } from "@/components/AdDownloadModal";
 import { toast } from "sonner";
 import * as pdfjsLib from "pdfjs-dist";
+import { version } from "pdfjs-dist";
 
 // Set worker source
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${version}/pdf.worker.min.mjs`;
 
 const PDFToImage = () => {
   const [images, setImages] = useState<string[]>([]);
