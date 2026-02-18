@@ -8,6 +8,16 @@ import { Badge } from "@/components/ui/badge";
 
 const blogPosts = [
   {
+    id: 17,
+    slug: "best-free-online-tools-us-college-students",
+    title: "Best Free Online Tools for US College Students & Job Seekers (2026)",
+    excerpt: "Discover the top free online tools every American college student and job seeker needs in 2026 — from resume photo editors to PDF converters, GPA tools, and more.",
+    category: "US Tools Guide",
+    date: "2026-02-18",
+    readTime: "15 min read",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&h=400&fit=crop"
+  },
+  {
     id: 16,
     slug: "12th-ke-baad-kya-kare",
     title: "12th के बाद क्या करें? – Complete Career Guide After 12th (2026)",
