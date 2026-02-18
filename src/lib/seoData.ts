@@ -400,32 +400,48 @@ export const toolsSEO: Record<string, ToolSEO> = {
     }
   },
   "kb-converter": {
-    title: "Free KB Converter - Reduce Image to Specific KB Size",
-    h1Title: "KB Converter - Reduce Image to Exact KB Size Free",
-    description: "Reduce image to exact KB size online for free. Convert image to 50KB, 100KB, 200KB or any size. Perfect for document uploads. No quality loss.",
-    keywords: "kb converter, reduce image size kb, image to kb, compress to specific size, 100kb image, 50kb photo, resize image kb, passport photo kb",
+    title: "Image KB Converter Free – Reduce Photo Size to 20KB, 50KB, 100KB, 200KB Online",
+    h1Title: "Image KB Converter – Reduce Photo to Exact KB Size Free Online",
+    description: "Reduce image size to exact KB online free. Convert photo to 20KB, 50KB, 100KB, 200KB for SSC, UPSC, passport, job forms. No signup, no quality loss. Works on mobile.",
+    keywords: "kb converter, image size reducer in kb, reduce image size to 50kb, compress image to 100kb, photo size reducer kb, reduce photo size online, image compressor to kb, resize image to 20kb, passport photo kb size, ssc form photo size, upsc photo size reducer, reduce image file size kb, compress photo to specific kb, image kb reducer online free, photo compress 200kb, reduce image size for government form, image to 100kb converter, photo size changer kb",
     faqs: [
       {
         question: "How do I reduce an image to a specific KB size?",
-        answer: "Upload your image, enter your target file size in KB (e.g., 100KB), and our tool automatically compresses the image to that exact size."
+        answer: "Upload your image, enter your target file size in KB (e.g., 100KB), and our tool automatically compresses the image to that exact size while maintaining the best possible quality."
       },
       {
-        question: "Why do I need to reduce image to specific KB?",
-        answer: "Many official forms, job applications, and government websites have strict file size limits (often 50KB-200KB). Our tool helps you meet these requirements exactly."
+        question: "How to reduce image size to 50KB for government forms?",
+        answer: "Upload your photo, type 50 in the target KB field, and click Convert. The tool will compress your image to exactly 50KB – perfect for SSC, UPSC, Railway, and other government application forms."
+      },
+      {
+        question: "Can I reduce passport photo to 20KB or 200KB?",
+        answer: "Yes! Enter any target size – 20KB, 50KB, 100KB, or 200KB. Our converter works for passport photos, visa applications, ID cards, and any official document that requires a specific file size."
+      },
+      {
+        question: "Does this KB converter work on mobile phones?",
+        answer: "Yes, our KB converter works perfectly on Android and iPhone browsers. No app download needed – just open the website, upload your photo, and reduce it to your desired KB size instantly."
+      },
+      {
+        question: "Will reducing image KB size affect quality?",
+        answer: "Our smart algorithm preserves maximum quality while hitting your exact target KB size. For most images, the quality difference is barely noticeable especially at sizes above 50KB."
+      },
+      {
+        question: "What image formats are supported?",
+        answer: "We support JPG, JPEG, PNG, WebP, and other common formats. The output is optimized JPEG format for the best compression-to-quality ratio."
       }
     ],
     article: {
-      introduction: "Many official applications, government portals, and online forms require images to be within specific file size limits – often 50KB, 100KB, or 200KB. Our free KB Converter tool allows you to reduce any image to your exact target file size in kilobytes. Unlike generic compressors that simply reduce quality, our tool intelligently optimizes your image to meet the precise size requirement while preserving as much visual quality as possible. This is essential for passport photo uploads, job application portals, government document submissions, educational enrollment forms, and various online registrations. Manually adjusting compression settings to hit an exact file size is frustrating and time-consuming, but our tool automates this process completely. Simply specify your target size, and the tool handles the rest.",
-      howToUse: "Reducing your image to a specific KB size is effortless with our converter. Start by uploading your image – click the upload area or drag and drop your file. The tool displays your image preview along with its current file size. Next, enter your target file size in kilobytes in the input field. Common targets include 50KB for strict forms, 100KB for general applications, and 200KB for higher quality requirements. Click the 'Convert' button and the tool processes your image, using intelligent compression to reach your exact target size. The algorithm iteratively adjusts compression parameters to get as close to your target as possible while maximizing quality. Once processing completes, you'll see the new file size and can preview the result. If satisfied, enter a custom filename and download your perfectly sized image. The output maintains the original image dimensions while meeting your size requirement.",
+      introduction: "Need to reduce your image to an exact KB size? Whether it's 20KB for a government form, 50KB for SSC/UPSC applications, 100KB for job portals, or 200KB for passport uploads — our free KB Converter tool does it instantly. Many official websites, recruitment portals, and educational institutions require photos and documents within strict file size limits. Manually adjusting compression settings to hit an exact KB target is frustrating, but our intelligent converter automates the entire process. Just upload, enter your target KB, and download. It works on desktop, tablet, and mobile — no app installation or signup needed. All processing happens in your browser, so your photos never leave your device.",
+      howToUse: "Reducing your image to a specific KB size is effortless with our converter. Start by uploading your image – click the upload area or drag and drop your file. The tool displays your image preview along with its current file size. Next, enter your target file size in kilobytes in the input field. Common targets include 20KB for strict government forms, 50KB for SSC/UPSC applications, 100KB for job portals, and 200KB for passport and visa uploads. Click the 'Convert' button and the tool processes your image, using intelligent compression to reach your exact target size. The algorithm iteratively adjusts compression parameters to get as close to your target as possible while maximizing quality. Once processing completes, you'll see the new file size and can preview the result. If satisfied, enter a custom filename and download your perfectly sized image.",
       keyFeatures: [
-        "Exact Size Targeting – Hit your specific KB requirement precisely",
+        "Exact Size Targeting – Hit your specific KB requirement precisely (20KB, 50KB, 100KB, 200KB or any custom size)",
         "Smart Compression – Intelligent algorithm maximizes quality at target size",
-        "Common Presets – Quick access to popular size limits like 50KB, 100KB, 200KB",
+        "Government Form Ready – Perfect for SSC, UPSC, Railway, Banking, and State PSC application forms",
+        "Passport & Visa Photos – Meets size requirements for Indian passport, US visa, UK visa, and more",
+        "Mobile Friendly – Works perfectly on Android and iPhone browsers without any app",
         "Size Preview – See current and target sizes before and after conversion",
-        "Quality Preservation – Maintains best possible quality at target size",
         "All Formats – Works with JPG, PNG, WebP, and other common formats",
-        "Form Ready – Perfect for government, job, and educational applications",
-        "Instant Processing – Fast conversion happens right in your browser"
+        "100% Private – All processing happens in your browser, images never uploaded to servers"
       ]
     }
   },
