@@ -15,7 +15,7 @@ const blogPosts = [
     category: "US Tools Guide",
     date: "2026-02-18",
     readTime: "15 min read",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
   },
   {
     id: 16,
