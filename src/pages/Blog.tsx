@@ -18,6 +18,96 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=400&fit=crop"
   },
   {
+    id: 1,
+    slug: "how-to-compress-images-without-losing-quality",
+    title: "How to Compress Images Without Losing Quality in 2026",
+    excerpt: "Learn the best techniques to reduce image file size while maintaining visual quality. Updated guide for 2026.",
+    category: "Image Tools",
+    date: "2026-02-28",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+  },
+  {
+    id: 2,
+    slug: "complete-guide-to-qr-codes",
+    title: "Complete Guide to QR Codes: Creation, Usage & Best Practices",
+    excerpt: "Everything you need to know about QR codes - from creating your first code to implementing them in marketing campaigns.",
+    category: "QR Tools",
+    date: "2026-02-27",
+    readTime: "7 min read",
+    image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&h=400&fit=crop"
+  },
+  {
+    id: 3,
+    slug: "remove-background-from-images-free",
+    title: "How to Remove Background from Images for Free - Step by Step Guide",
+    excerpt: "Discover the easiest ways to remove backgrounds from your photos without any design skills or expensive software.",
+    category: "Image Tools",
+    date: "2026-02-26",
+    readTime: "4 min read",
+    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop"
+  },
+  {
+    id: 4,
+    slug: "understanding-bmi-health-guide",
+    title: "Understanding BMI: A Complete Health Guide for Everyone",
+    excerpt: "Learn what BMI means, how to calculate it, and what your results indicate about your overall health and fitness.",
+    category: "Health Tools",
+    date: "2026-02-25",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
+  },
+  {
+    id: 5,
+    slug: "pdf-image-conversion-tips",
+    title: "PDF to Image & Image to PDF: Tips for Perfect Conversions",
+    excerpt: "Master the art of converting between PDF and image formats with our expert tips and tricks.",
+    category: "PDF Tools",
+    date: "2026-02-24",
+    readTime: "5 min read",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop"
+  },
+  {
+    id: 6,
+    slug: "color-theory-web-design",
+    title: "Color Theory for Web Design: Picking Perfect Color Palettes",
+    excerpt: "Understand color theory basics and learn how to choose color combinations that make your website stand out.",
+    category: "Design Tools",
+    date: "2026-02-23",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=400&fit=crop"
+  },
+  {
+    id: 8,
+    slug: "best-image-tools-for-social-media",
+    title: "Best Image Tools for Social Media: Create Stunning Posts in 2026",
+    excerpt: "Master social media visuals with these free image tools. Learn to crop, compress, add text, and remove backgrounds for Instagram, Facebook, and more.",
+    category: "Image Tools",
+    date: "2026-02-22",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop"
+  },
+  {
+    id: 9,
+    slug: "essential-calculators-for-daily-life",
+    title: "Essential Online Calculators for Daily Life: Complete Guide 2026",
+    excerpt: "From BMI to age calculations, discover the most useful free online calculators that simplify your everyday tasks and health tracking.",
+    category: "Calculator Tools",
+    date: "2026-02-21",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"
+  },
+  {
+    id: 7,
+    slug: "top-5-pdf-tools-for-students",
+    title: "Top 5 PDF Tools for Students: Ultimate Guide for 2026",
+    excerpt: "Discover the best free PDF tools every student needs. From converting PDFs to images to creating PDFs from photos - complete guide with rankings and tips.",
+    category: "PDF Tools",
+    date: "2026-02-20",
+    readTime: "12 min read",
+    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop"
+  },
+  {
     id: 18,
     slug: "reduce-image-size-kb-government-forms",
     title: "How to Reduce Image Size to 20KB, 50KB, 100KB for Government Forms (2026 Guide)",
@@ -26,6 +116,16 @@ const blogPosts = [
     date: "2026-02-19",
     readTime: "16 min read",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop"
+  },
+  {
+    id: 10,
+    slug: "ssc-form-photo-size-compressor",
+    title: "SSC Form Photo Size Compressor – SSC फॉर्म के लिए फोटो साइज कैसे कम करें (2026 गाइड)",
+    excerpt: "SSC CGL, CHSL, MTS फॉर्म भरते समय फोटो साइज की समस्या? जानिए कैसे फ्री में फोटो को सही KB साइज में कंप्रेस करें बिना क्वालिटी खोए।",
+    category: "Image Tools",
+    date: "2026-02-19",
+    readTime: "15 min read",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop"
   },
   {
     id: 17,
@@ -96,106 +196,6 @@ const blogPosts = [
     date: "2026-02-12",
     readTime: "15 min read",
     image: "https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?w=600&h=400&fit=crop"
-  },
-  {
-    id: 10,
-    slug: "ssc-form-photo-size-compressor",
-    title: "SSC Form Photo Size Compressor – SSC फॉर्म के लिए फोटो साइज कैसे कम करें (2026 गाइड)",
-    excerpt: "SSC CGL, CHSL, MTS फॉर्म भरते समय फोटो साइज की समस्या? जानिए कैसे फ्री में फोटो को सही KB साइज में कंप्रेस करें बिना क्वालिटी खोए।",
-    category: "Image Tools",
-    date: "2026-02-19",
-    readTime: "15 min read",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop"
-  },
-  {
-    id: 8,
-    slug: "best-image-tools-for-social-media",
-    title: "Best Image Tools for Social Media: Create Stunning Posts in 2026",
-    excerpt: "Master social media visuals with these free image tools. Learn to crop, compress, add text, and remove backgrounds for Instagram, Facebook, and more.",
-    category: "Image Tools",
-    date: "2026-02-22",
-    readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop"
-  },
-  {
-    id: 9,
-    slug: "essential-calculators-for-daily-life",
-    title: "Essential Online Calculators for Daily Life: Complete Guide 2026",
-    excerpt: "From BMI to age calculations, discover the most useful free online calculators that simplify your everyday tasks and health tracking.",
-    category: "Calculator Tools",
-    date: "2026-02-21",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"
-  },
-  {
-    id: 7,
-    slug: "top-5-pdf-tools-for-students",
-    title: "Top 5 PDF Tools for Students: Ultimate Guide for 2026",
-    excerpt: "Discover the best free PDF tools every student needs. From converting PDFs to images to creating PDFs from photos - complete guide with rankings and tips.",
-    category: "PDF Tools",
-    date: "2026-02-20",
-    readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop"
-  },
-  {
-    id: 1,
-    slug: "how-to-compress-images-without-losing-quality",
-    title: "How to Compress Images Without Losing Quality in 2026",
-    excerpt: "Learn the best techniques to reduce image file size while maintaining visual quality. Updated guide for 2026.",
-    category: "Image Tools",
-    date: "2026-02-28",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
-  },
-  {
-    id: 2,
-    slug: "complete-guide-to-qr-codes",
-    title: "Complete Guide to QR Codes: Creation, Usage & Best Practices",
-    excerpt: "Everything you need to know about QR codes - from creating your first code to implementing them in marketing campaigns.",
-    category: "QR Tools",
-    date: "2026-02-27",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&h=400&fit=crop"
-  },
-  {
-    id: 3,
-    slug: "remove-background-from-images-free",
-    title: "How to Remove Background from Images for Free - Step by Step Guide",
-    excerpt: "Discover the easiest ways to remove backgrounds from your photos without any design skills or expensive software.",
-    category: "Image Tools",
-    date: "2026-02-26",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&h=400&fit=crop"
-  },
-  {
-    id: 4,
-    slug: "understanding-bmi-health-guide",
-    title: "Understanding BMI: A Complete Health Guide for Everyone",
-    excerpt: "Learn what BMI means, how to calculate it, and what your results indicate about your overall health and fitness.",
-    category: "Health Tools",
-    date: "2026-02-25",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop"
-  },
-  {
-    id: 5,
-    slug: "pdf-image-conversion-tips",
-    title: "PDF to Image & Image to PDF: Tips for Perfect Conversions",
-    excerpt: "Master the art of converting between PDF and image formats with our expert tips and tricks.",
-    category: "PDF Tools",
-    date: "2026-02-24",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&h=400&fit=crop"
-  },
-  {
-    id: 6,
-    slug: "color-theory-web-design",
-    title: "Color Theory for Web Design: Picking Perfect Color Palettes",
-    excerpt: "Understand color theory basics and learn how to choose color combinations that make your website stand out.",
-    category: "Design Tools",
-    date: "2026-02-23",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=400&fit=crop"
   }
 ];
 
