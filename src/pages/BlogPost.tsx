@@ -1135,6 +1135,8 @@ Don't forget neutrals:
 - Pure white can be stark; try #f5f5f5 or #fafafa
 - Gray variations for text and borders
 
+[AD_BANNER]
+
 ## Accessibility Considerations
 
 ### Color Contrast
