@@ -872,6 +872,8 @@ When converting multi-page PDFs:
 - Choose lossless formats when possible
 - Avoid multiple conversions
 
+[AD_BANNER]
+
 ## Image to PDF Conversion Tips
 
 ### 1. Prepare Your Images
