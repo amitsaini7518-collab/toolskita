@@ -173,7 +173,7 @@ const blogPosts = [
     title: "Resizing Documents for UK Visa Applications: Step-by-Step Guide (2026)",
     excerpt: "Learn how to resize your photos, documents, and supporting files to meet UK visa application requirements. Complete step-by-step guide for all UK visa types.",
     category: "Image Tools",
-    date: "2026-02-13",
+    date: "2025-12-11",
     readTime: "14 min read",
     image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=600&h=400&fit=crop"
   },
