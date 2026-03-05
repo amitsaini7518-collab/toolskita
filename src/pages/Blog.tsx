@@ -113,7 +113,7 @@ const blogPosts = [
     title: "How to Reduce Image Size to 20KB, 50KB, 100KB for Government Forms (2026 Guide)",
     excerpt: "Step-by-step guide to reduce photo & signature size to exact KB for SSC, UPSC, Railway, Agniveer, Bank, and all government exam forms. Free online tool — no signup needed.",
     category: "Image Tools",
-    date: "2026-02-19",
+    date: "2025-12-29",
     readTime: "16 min read",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=400&fit=crop"
   },
