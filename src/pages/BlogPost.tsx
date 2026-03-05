@@ -654,6 +654,8 @@ Or in imperial units:
 For example, if you weigh 70 kg and are 1.75 m tall:
 BMI = 70 / (1.75 × 1.75) = 70 / 3.0625 = 22.9
 
+[AD_BANNER]
+
 ## BMI Categories
 
 The World Health Organization (WHO) defines the following BMI categories for adults:
