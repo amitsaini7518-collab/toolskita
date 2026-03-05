@@ -93,7 +93,7 @@ const blogPosts = [
     title: "Essential Online Calculators for Daily Life: Complete Guide 2026",
     excerpt: "From BMI to age calculations, discover the most useful free online calculators that simplify your everyday tasks and health tracking.",
     category: "Calculator Tools",
-    date: "2026-02-21",
+    date: "2026-01-04",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop"
   },
