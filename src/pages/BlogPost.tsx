@@ -1026,6 +1026,8 @@ Created by mixing a primary and adjacent secondary color:
 - Yellow-Green, Blue-Green
 - Blue-Purple, Red-Purple
 
+[AD_BANNER]
+
 ## Color Properties
 
 ### Hue
