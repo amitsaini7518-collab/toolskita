@@ -1079,6 +1079,8 @@ Four colors forming a rectangle on the wheel:
 
 **Best for**: Rich, diverse color schemes
 
+[AD_BANNER]
+
 ## Color Psychology
 
 Colors evoke specific emotions and associations:
