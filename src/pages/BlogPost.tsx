@@ -770,6 +770,8 @@ More accurate measure of fat vs. lean mass:
 - Monitor your BMI regularly
 - Discuss concerns with healthcare providers
 
+[AD_BANNER]
+
 ## How to Use Our Free BMI Calculator
 
 Our BMI Calculator makes it easy to check your body mass index:
