@@ -33,7 +33,7 @@ const blogPosts = [
     title: "Complete Guide to QR Codes: Creation, Usage & Best Practices",
     excerpt: "Everything you need to know about QR codes - from creating your first code to implementing them in marketing campaigns.",
     category: "QR Tools",
-    date: "2026-02-27",
+    date: "2026-01-22",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&h=400&fit=crop"
   },
