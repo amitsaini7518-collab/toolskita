@@ -143,7 +143,7 @@ const blogPosts = [
     title: "12th के बाद क्या करें? – Complete Career Guide After 12th (2026)",
     excerpt: "12th पास करने के बाद कौन सा कोर्स करें? Science, Commerce, Arts सभी स्ट्रीम के लिए बेस्ट करियर ऑप्शन्स, टॉप कोर्सेज, और फ्री ऑनलाइन टूल्स की पूरी जानकारी।",
     category: "Career Guide",
-    date: "2026-02-17",
+    date: "2025-12-20",
     readTime: "18 min read",
     image: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=600&h=400&fit=crop"
   },
