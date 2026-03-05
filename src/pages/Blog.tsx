@@ -13,7 +13,7 @@ const blogPosts = [
     title: "How to Make a Passport Photo at Home (USA): Free DIY Guide 2026",
     excerpt: "Save $15+ by making your own US passport photo at home. Step-by-step guide with exact size requirements (2x2 inches), background removal, cropping, and free online tools — accepted by USPS & State Department.",
     category: "Image Tools",
-    date: "2026-03-01",
+    date: "2026-01-28",
     readTime: "18 min read",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=400&fit=crop"
   },
