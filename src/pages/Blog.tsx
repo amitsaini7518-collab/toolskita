@@ -193,7 +193,7 @@ const blogPosts = [
     title: "Army Agniveer Recruitment 2026: Photo और Signature का Size कैसे कम करें?",
     excerpt: "Army Agniveer भर्ती 2026 का फॉर्म भर रहे हैं? जानिए Photo और Signature को सही KB साइज में कैसे कम करें – स्टेप बाय स्टेप गाइड हिंदी में।",
     category: "Image Tools",
-    date: "2026-02-12",
+    date: "2025-12-05",
     readTime: "15 min read",
     image: "https://images.unsplash.com/photo-1579912437766-7896df6d3cd3?w=600&h=400&fit=crop"
   }
