@@ -113,6 +113,7 @@ export const AdDownloadModal = ({
           {/* AdSense Container */}
           <div className="w-[300px] h-[250px] bg-muted rounded-lg overflow-hidden flex items-center justify-center">
             <ins
+              key={adKey}
               ref={adRef}
               className="adsbygoogle"
               style={{ display: "inline-block", width: 300, height: 250 }}
