@@ -30,22 +30,33 @@ export const AdDownloadModal = ({
   const [isComplete, setIsComplete] = useState(false);
   const adRef = useRef<HTMLModElement>(null);
   const adLoadedRef = useRef(false);
+  const [adKey, setAdKey] = useState(0);
 
-  // Initialize AdSense when modal opens
+  // Reset ad key when modal opens to force fresh <ins> element
   useEffect(() => {
-    if (isOpen && !adLoadedRef.current && adRef.current) {
+    if (isOpen) {
+      adLoadedRef.current = false;
+      setAdKey(prev => prev + 1);
+    }
+  }, [isOpen]);
+
+  // Initialize AdSense after fresh <ins> is rendered and has dimensions
+  useEffect(() => {
+    if (!isOpen || adLoadedRef.current) return;
+
+    const timer = setTimeout(() => {
       try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        adLoadedRef.current = true;
+        if (adRef.current && adRef.current.offsetWidth > 0) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          adLoadedRef.current = true;
+        }
       } catch (e) {
         console.error("AdSense error:", e);
       }
-    }
-    
-    if (!isOpen) {
-      adLoadedRef.current = false;
-    }
-  }, [isOpen]);
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [isOpen, adKey]);
 
   const handleComplete = useCallback(() => {
     setIsComplete(true);
@@ -102,6 +113,7 @@ export const AdDownloadModal = ({
           {/* AdSense Container */}
           <div className="w-[300px] h-[250px] bg-muted rounded-lg overflow-hidden flex items-center justify-center">
             <ins
+              key={adKey}
               ref={adRef}
               className="adsbygoogle"
               style={{ display: "inline-block", width: 300, height: 250 }}
